@@ -15,22 +15,21 @@
 
   <style>
     :root {
-      --bg: #050712;
-      --bg-soft: #0c1023;
-      --bg-card: #11162a;
-      --bg-alt: #171d35;
-      --primary: #2fd0ff;
-      --primary-soft: #baf0ff;
-      --accent: #ff9564;
-      --accent-soft: #ffe1d1;
-      --accent2: #7cffc0;
-      --text: #f7f8ff;
-      --muted: #a9b1d2;
-      --border-soft: rgba(255,255,255,0.12);
-      --radius-lg: 20px;
+      --bg: #f3f6f8;
+      --bg-soft: #e8f3fa;
+      --bg-alt: #ffffff;
+      --primary: #1a6d96;
+      --primary-light: #d7eef9;
+      --accent: #ff9b6a;
+      --accent-soft: #ffe4d4;
+      --text: #23323c;
+      --muted: #6b7b86;
+      --border-soft: rgba(22,50,66,0.12);
+      --radius-lg: 18px;
       --radius-xl: 26px;
       --radius-pill: 999px;
-      --shadow: 0 18px 40px rgba(0,0,0,0.75);
+      --shadow-soft: 0 14px 30px rgba(0,0,0,0.08);
+      --shadow-strong: 0 18px 40px rgba(0,0,0,0.16);
     }
 
     * { box-sizing: border-box; }
@@ -38,7 +37,7 @@
     body {
       margin: 0;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top left, #121933 0, #050712 40%, #02030a 100%);
+      background: radial-gradient(circle at top left, #f7fbff 0, #f3f6f8 40%, #e4edf3 100%);
       color: var(--text);
       line-height: 1.7;
     }
@@ -51,40 +50,99 @@
       text-decoration: underline;
     }
 
+    /* HEADER */
+
     header {
       position: sticky;
       top: 0;
-      z-index: 50;
-      background: rgba(5,7,18,0.95);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
+      z-index: 80;
+      backdrop-filter: blur(16px);
+      background: rgba(247,251,255,0.96);
+      border-bottom: 1px solid rgba(22,50,66,0.06);
     }
-    .nav-inner {
+
+    .header-inner {
       max-width: 1160px;
       margin: 0 auto;
-      padding: 10px 18px;
+      padding: 6px 18px 10px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .header-top {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 16px;
+      gap: 10px;
+      font-size: 12px;
+      color: var(--muted);
     }
+
+    .header-phone {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .header-phone a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+    .header-phone a:hover {
+      text-decoration: underline;
+    }
+
+    .header-badge {
+      padding: 3px 9px;
+      border-radius: var(--radius-pill);
+      background: rgba(215,238,249,0.9);
+      border: 1px solid rgba(26,109,150,0.18);
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--primary);
+    }
+
+    .nav-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
     .brand-block {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-logo {
+      width: 120px;
+      max-width: 32vw;
+    }
+
+    .brand-text-block {
       display: flex;
       flex-direction: column;
     }
+
     .brand-name {
       font-size: 18px;
       font-weight: 700;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
+      color: #163242;
     }
+
     .brand-sub {
       font-size: 11px;
       color: var(--muted);
-      letter-spacing: 0.18em;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
       margin-top: 2px;
     }
+
     .nav-links {
       display: flex;
       gap: 10px;
@@ -93,20 +151,16 @@
       flex-wrap: wrap;
       justify-content: flex-end;
     }
+
     .nav-links a {
       padding: 6px 10px;
       border-radius: var(--radius-pill);
       color: var(--muted);
     }
+
     .nav-links a:hover {
-      background: rgba(255,255,255,0.04);
+      background: rgba(255,255,255,0.9);
       text-decoration: none;
-    }
-    .nav-links a.nav-cta {
-      background: linear-gradient(135deg, var(--accent), #ffb27e);
-      color: #260d06;
-      font-weight: 600;
-      box-shadow: var(--shadow);
     }
 
     @media (max-width: 860px) {
@@ -115,25 +169,40 @@
       }
     }
 
+    /* HERO */
+
     .hero-wrap {
       max-width: 1160px;
       margin: 16px auto 28px auto;
       padding: 0 18px;
       position: relative;
     }
-    .hero-orb {
+
+    .bubble-orb {
       position: absolute;
-      inset: -60px -40px auto auto;
-      pointer-events: none;
-      opacity: 0.5;
-      filter: blur(0.3px);
-      background:
-        radial-gradient(circle at 20% 20%, rgba(255,255,255,0.6), transparent 55%),
-        radial-gradient(circle at 70% 10%, rgba(47,208,255,0.4), transparent 60%),
-        radial-gradient(circle at 40% 80%, rgba(255,149,100,0.35), transparent 60%);
-      width: 360px;
-      height: 360px;
+      inset: -40px auto auto -60px;
+      width: 260px;
+      height: 260px;
       border-radius: 50%;
+      pointer-events: none;
+      opacity: 0.7;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,0.9), transparent 60%),
+        radial-gradient(circle at 70% 30%, rgba(177,228,255,0.9), transparent 65%),
+        radial-gradient(circle at 40% 80%, rgba(192,235,255,0.8), transparent 60%);
+      filter: blur(0.2px);
+    }
+
+    .bubble-orb::after {
+      content: "";
+      position: absolute;
+      right: -20px;
+      bottom: 10px;
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.8), rgba(26,109,150,0.8));
+      opacity: 0.7;
     }
 
     .hero-grid {
@@ -144,6 +213,7 @@
       gap: 28px;
       align-items: center;
     }
+
     @media (max-width: 880px) {
       .hero-grid {
         grid-template-columns: 1fr;
@@ -156,36 +226,45 @@
       gap: 8px;
       padding: 4px 12px;
       border-radius: var(--radius-pill);
-      background: rgba(12,16,40,0.92);
-      border: 1px solid rgba(255,255,255,0.16);
+      background: rgba(232,247,255,0.95);
+      border: 1px solid rgba(26,109,150,0.18);
       font-size: 11px;
       letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: var(--primary-soft);
+      color: var(--primary);
       margin-bottom: 10px;
     }
+
     .pill-dot {
       width: 10px;
       height: 10px;
       border-radius: 50%;
-      background: radial-gradient(circle at 30% 30%, #fff, var(--primary));
-      box-shadow: 0 0 0 4px rgba(47,208,255,0.3);
+      background: radial-gradient(circle at 30% 30%, #ffffff, #1a6d96);
+      box-shadow: 0 0 0 4px rgba(26,109,150,0.18);
     }
 
     .hero-title {
       margin: 0 0 10px 0;
       font-size: clamp(28px, 4vw, 40px);
-      line-height: 1.1;
+      line-height: 1.15;
+      color: #163242;
     }
+
     .hero-title span.highlight {
-      background-image: linear-gradient(135deg, var(--primary), var(--accent));
+      background-image: linear-gradient(135deg, #1a6d96, #35a4c4);
       -webkit-background-clip: text;
       color: transparent;
     }
+
     .hero-text {
       font-size: 15px;
       color: var(--muted);
       max-width: 640px;
+    }
+
+    strong.keyword {
+      font-weight: 700;
+      color: #163242;
     }
 
     .hero-cta-row {
@@ -195,6 +274,7 @@
       gap: 10px;
       align-items: center;
     }
+
     .btn-primary {
       display: inline-flex;
       align-items: center;
@@ -206,10 +286,11 @@
       border: none;
       cursor: pointer;
       color: #1c0a04;
-      background: linear-gradient(135deg, var(--accent), #ffd08c);
-      box-shadow: var(--shadow);
+      background: linear-gradient(135deg, #ff9b6a, #ffd08c);
+      box-shadow: var(--shadow-soft);
       text-decoration: none;
     }
+
     .btn-primary span.icon {
       width: 22px;
       height: 22px;
@@ -220,6 +301,7 @@
       justify-content: center;
       font-size: 13px;
     }
+
     .btn-primary:hover {
       transform: translateY(-1px);
       text-decoration: none;
@@ -232,14 +314,15 @@
       border-radius: var(--radius-pill);
       padding: 8px 16px;
       font-size: 13px;
-      border: 1px solid rgba(255,255,255,0.18);
-      background: rgba(10,14,34,0.96);
-      color: var(--primary-soft);
+      border: 1px solid rgba(26,109,150,0.26);
+      background: rgba(255,255,255,0.96);
+      color: var(--primary);
       text-decoration: none;
     }
+
     .btn-secondary:hover {
       text-decoration: none;
-      background: rgba(16,22,48,0.96);
+      background: #ffffff;
     }
 
     .hero-trust {
@@ -247,88 +330,126 @@
       font-size: 12px;
       color: var(--muted);
     }
+
     .hero-trust strong {
-      color: var(--primary-soft);
+      color: #163242;
     }
+
     .trust-row {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
       margin-top: 6px;
     }
+
     .trust-pill {
       border-radius: var(--radius-pill);
       padding: 4px 10px;
       font-size: 11px;
-      border: 1px solid rgba(255,255,255,0.14);
-      background: rgba(11,15,33,0.98);
+      border: 1px solid rgba(22,50,66,0.08);
+      background: rgba(255,255,255,0.96);
       display: inline-flex;
       align-items: center;
       gap: 6px;
       color: var(--muted);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.03);
     }
 
     .hero-aside {
-      background: linear-gradient(145deg, #151a34, #101426);
+      background: radial-gradient(circle at 0 0, #d7eef9, #ffffff);
       border-radius: 26px;
       padding: 12px;
-      box-shadow: var(--shadow);
-      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(26,109,150,0.16);
+      position: relative;
+      overflow: hidden;
     }
+
+    .hero-aside::after {
+      content: "";
+      position: absolute;
+      right: -40px;
+      bottom: -40px;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.9), rgba(26,109,150,0.75));
+      opacity: 0.35;
+    }
+
     .hero-aside-inner {
-      background: rgba(4,7,21,0.96);
+      position: relative;
+      z-index: 1;
+      background: rgba(255,255,255,0.98);
       border-radius: 18px;
       padding: 14px;
-      border: 1px solid rgba(255,255,255,0.12);
+      border: 1px solid rgba(26,109,150,0.12);
     }
+
     .hero-aside-head {
       font-size: 13px;
-      color: var(--primary-soft);
+      color: var(--primary);
       margin-bottom: 6px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 10px;
     }
+
     .hero-aside-head span.badge {
       padding: 3px 8px;
       border-radius: var(--radius-pill);
-      background: rgba(127,255,192,0.12);
-      border: 1px solid rgba(127,255,192,0.4);
+      background: rgba(56,193,120,0.08);
+      border: 1px solid rgba(56,193,120,0.5);
       font-size: 11px;
-      color: #d7ffe8;
+      color: #23804c;
     }
+
     .hero-aside-main {
       font-size: 13px;
       color: var(--muted);
       margin-bottom: 10px;
     }
+
     .hero-aside-stats {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 8px;
       font-size: 11px;
     }
+
+    @media (max-width: 640px) {
+      .hero-aside-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
     .hero-aside-pill {
       border-radius: 12px;
       padding: 7px 9px;
-      background: rgba(16,22,46,0.96);
-      border: 1px solid rgba(255,255,255,0.16);
+      background: rgba(243,247,251,0.98);
+      border: 1px solid rgba(26,109,150,0.18);
+      color: var(--muted);
     }
+
     .hero-aside-pill strong {
       display: block;
       font-size: 13px;
-      color: var(--primary-soft);
+      color: #163242;
     }
+
+    /* MAIN LAYOUT */
 
     main {
       max-width: 1160px;
       margin: 0 auto 60px auto;
       padding: 0 18px 40px 18px;
     }
+
     section {
       margin-top: 40px;
     }
+
     .section-header {
       display: flex;
       align-items: baseline;
@@ -336,10 +457,13 @@
       gap: 16px;
       margin-bottom: 14px;
     }
+
     .section-header h2 {
       margin: 0;
       font-size: 22px;
+      color: #163242;
     }
+
     .section-tagline {
       font-size: 13px;
       color: var(--muted);
@@ -352,6 +476,7 @@
       gap: 20px;
       align-items: flex-start;
     }
+
     @media (max-width: 880px) {
       .columns {
         grid-template-columns: 1fr;
@@ -359,46 +484,54 @@
     }
 
     .card {
-      background: var(--bg-card);
+      background: var(--bg-alt);
       border-radius: var(--radius-lg);
       padding: 16px 16px 14px 16px;
       border: 1px solid var(--border-soft);
-      box-shadow: 0 18px 40px rgba(0,0,0,0.55);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.05);
       font-size: 14px;
       color: var(--muted);
     }
+
     .card-tag {
       font-size: 11px;
       letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: var(--primary-soft);
+      color: var(--primary);
       margin-bottom: 4px;
     }
+
     .card h3 {
       margin: 0 0 8px 0;
       font-size: 17px;
+      color: #163242;
     }
+
     .card p {
       margin: 0 0 8px 0;
     }
+
     .card-list {
       margin: 6px 0 0 18px;
       padding: 0;
+      color: var(--muted);
     }
 
     .strip {
-      background: radial-gradient(circle at top left, rgba(47,208,255,0.16), rgba(10,14,30,0.96));
+      background: linear-gradient(120deg, #e7f4fa, #f8fcff);
       border-radius: var(--radius-xl);
       padding: 16px;
-      border: 1px solid rgba(255,255,255,0.16);
-      box-shadow: var(--shadow);
+      border: 1px solid rgba(22,50,66,0.08);
+      box-shadow: 0 12px 26px rgba(0,0,0,0.05);
       font-size: 14px;
       color: var(--muted);
       margin-top: 16px;
     }
+
     .strip h3 {
       margin: 0 0 8px 0;
       font-size: 18px;
+      color: #163242;
     }
 
     .pill-grid {
@@ -407,22 +540,26 @@
       gap: 9px;
       margin-top: 8px;
     }
+
     @media (max-width: 800px) {
       .pill-grid {
         grid-template-columns: 1fr;
       }
     }
+
     .mini-pill {
       border-radius: 16px;
       padding: 9px 10px;
-      background: rgba(17,23,49,0.98);
-      border: 1px solid rgba(255,255,255,0.16);
+      background: #ffffff;
+      border: 1px solid rgba(22,50,66,0.06);
       font-size: 13px;
       color: var(--muted);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.04);
     }
+
     .mini-pill strong {
       display: block;
-      color: var(--primary-soft);
+      color: #163242;
       margin-bottom: 3px;
     }
 
@@ -431,123 +568,94 @@
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 10px;
     }
+
     @media (max-width: 880px) {
       .audience-grid {
         grid-template-columns: 1fr;
       }
     }
+
     .aud-card {
-      background: var(--bg-card);
+      background: var(--bg-alt);
       border-radius: 18px;
       padding: 12px 13px;
-      border: 1px solid rgba(255,255,255,0.14);
-      box-shadow: 0 18px 40px rgba(0,0,0,0.5);
+      border: 1px solid rgba(22,50,66,0.08);
+      box-shadow: 0 12px 26px rgba(0,0,0,0.06);
       font-size: 13px;
       color: var(--muted);
     }
+
     .aud-card h3 {
       margin: 0 0 5px 0;
       font-size: 15px;
+      color: #163242;
     }
 
-    .faq-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 10px;
-    }
-    @media (max-width: 800px) {
-      .faq-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-    .faq-item {
-      background: var(--bg-card);
-      border-radius: 16px;
-      padding: 10px 12px;
-      border: 1px solid rgba(255,255,255,0.16);
-      font-size: 13px;
-      color: var(--muted);
-    }
-    .faq-item h3 {
-      margin: 0 0 6px 0;
-      font-size: 14px;
+    /* COLOR BAND SECTION (BUILDER) */
+
+    .color-band {
+      background: linear-gradient(135deg, #d7eef9, #f8fcff);
+      border-radius: 30px;
+      padding: 18px 18px 20px 18px;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(22,50,66,0.08);
     }
 
-    .directory-card {
-      background: var(--bg-card);
-      border-radius: var(--radius-lg);
-      padding: 14px;
-      border: 1px solid rgba(255,255,255,0.14);
-      font-size: 13px;
-      color: var(--muted);
-    }
-    .dir-tags {
-      margin-top: 8px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-    .dir-tags a {
-      padding: 4px 9px;
-      border-radius: var(--radius-pill);
-      background: rgba(16,22,48,0.98);
-      border: 1px solid rgba(255,255,255,0.14);
-      font-size: 12px;
-      color: var(--primary-soft);
-    }
-
-    /* BUILDER TOOL */
-    #builder {
-      background: var(--bg-alt);
-      border-radius: 26px;
-      padding: 16px;
-      border: 1px solid rgba(255,255,255,0.18);
-      box-shadow: var(--shadow);
-      margin-top: 8px;
-      font-size: 14px;
-      color: var(--muted);
-    }
     #builder h3 {
       margin-top: 0;
       font-size: 18px;
+      color: #163242;
     }
+
+    #builder p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
     .builder-grid {
       display: grid;
       grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
       gap: 18px;
       align-items: flex-start;
+      margin-top: 8px;
     }
+
     @media (max-width: 900px) {
       .builder-grid {
         grid-template-columns: 1fr;
       }
     }
+
     .accessory-list {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
       margin-top: 8px;
     }
+
     .accessory {
       border-radius: var(--radius-pill);
       padding: 6px 10px;
       font-size: 12px;
-      border: 1px solid rgba(255,255,255,0.2);
-      background: rgba(12,18,38,0.98);
+      border: 1px solid rgba(26,109,150,0.26);
+      background: rgba(255,255,255,0.98);
       cursor: grab;
       display: inline-flex;
       align-items: center;
       gap: 6px;
       user-select: none;
+      color: var(--muted);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.04);
     }
+
     .accessory span.icon {
       font-size: 14px;
     }
 
     .tub-area {
       border-radius: 22px;
-      border: 2px dashed rgba(255,255,255,0.25);
-      background: radial-gradient(circle at top, rgba(47,208,255,0.15), rgba(9,11,26,0.98));
+      border: 2px dashed rgba(26,109,150,0.35);
+      background: radial-gradient(circle at top, rgba(215,238,249,0.9), #ffffff);
       min-height: 160px;
       padding: 14px;
       display: flex;
@@ -555,15 +663,18 @@
       justify-content: space-between;
       position: relative;
       overflow: hidden;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.06);
     }
+
     .tub-outline {
       border-radius: 18px;
-      border: 2px solid rgba(191,235,255,0.7);
+      border: 2px solid rgba(177,228,255,0.9);
       height: 90px;
       margin-top: 6px;
       position: relative;
-      background: linear-gradient(180deg, rgba(191,235,255,0.15), rgba(4,7,19,0.98));
+      background: linear-gradient(180deg, rgba(191,235,255,0.35), rgba(248,252,255,0.98));
     }
+
     .tub-shower {
       position: absolute;
       right: 8px;
@@ -571,6 +682,7 @@
       font-size: 26px;
       opacity: 0.9;
     }
+
     .tub-door {
       position: absolute;
       left: 10px;
@@ -578,8 +690,10 @@
       width: 30px;
       height: 40px;
       border-radius: 10px;
-      border: 2px solid rgba(255,255,255,0.7);
+      border: 2px solid rgba(22,50,66,0.7);
+      background: rgba(255,255,255,0.7);
     }
+
     .tub-seat {
       position: absolute;
       right: 40px;
@@ -587,25 +701,30 @@
       width: 50px;
       height: 24px;
       border-radius: 8px;
-      border: 2px solid rgba(255,255,255,0.6);
+      border: 2px solid rgba(22,50,66,0.6);
+      background: rgba(255,255,255,0.8);
     }
+
     .tub-label {
       font-size: 12px;
-      color: var(--primary-soft);
+      color: var(--primary);
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 8px;
     }
+
     .tub-label span.right {
       font-size: 11px;
-      color: var(--accent-soft);
+      color: var(--muted);
     }
 
     .builder-output {
       margin-top: 10px;
       font-size: 13px;
+      color: var(--muted);
     }
+
     #selected-accessories {
       margin: 4px 0 0 18px;
       padding: 0;
@@ -617,26 +736,29 @@
       flex-wrap: wrap;
       gap: 8px;
     }
+
     .btn-small {
       border-radius: var(--radius-pill);
       padding: 7px 12px;
       font-size: 12px;
-      border: 1px solid rgba(255,255,255,0.22);
-      background: rgba(7,10,26,0.98);
-      color: var(--primary-soft);
+      border: 1px solid rgba(26,109,150,0.28);
+      background: rgba(255,255,255,0.96);
+      color: var(--primary);
       cursor: pointer;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.04);
     }
+
     .btn-small.primary {
-      border-color: rgba(255,149,100,0.7);
-      background: linear-gradient(135deg, var(--accent), #ffbf82);
+      border-color: rgba(255,155,106,0.8);
+      background: linear-gradient(135deg, #ff9b6a, #ffd08c);
       color: #1d0b05;
     }
 
     #plan-text {
       width: 100%;
       border-radius: 10px;
-      border: 1px solid rgba(255,255,255,0.2);
-      background: rgba(4,7,18,0.96);
+      border: 1px solid rgba(26,109,150,0.2);
+      background: rgba(255,255,255,0.98);
       color: var(--muted);
       padding: 8px;
       font-size: 12px;
@@ -646,91 +768,354 @@
       font-family: Consolas, "SF Mono", Menlo, monospace;
     }
 
+    /* FAQ / DIRECTORY / BLOG */
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    @media (max-width: 800px) {
+      .faq-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .faq-item {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 10px 12px;
+      border: 1px solid rgba(22,50,66,0.08);
+      font-size: 13px;
+      color: var(--muted);
+      box-shadow: 0 10px 22px rgba(0,0,0,0.04);
+    }
+
+    .faq-item h3 {
+      margin: 0 0 6px 0;
+      font-size: 14px;
+      color: #163242;
+    }
+
+    .directory-card {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      padding: 14px;
+      border: 1px solid rgba(22,50,66,0.08);
+      font-size: 13px;
+      color: var(--muted);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.05);
+    }
+
+    .dir-tags {
+      margin-top: 8px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .dir-tags a {
+      padding: 4px 9px;
+      border-radius: var(--radius-pill);
+      background: rgba(231,244,250,0.96);
+      border: 1px solid rgba(26,109,150,0.18);
+      font-size: 12px;
+      color: var(--primary);
+    }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    @media (max-width: 800px) {
+      .blog-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .blog-card {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      padding: 12px 14px 10px 14px;
+      box-shadow: 0 10px 22px rgba(0,0,0,0.05);
+      border: 1px solid rgba(22,50,66,0.06);
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .blog-meta {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .blog-card h3 {
+      margin: 0;
+      font-size: 15px;
+      color: #163242;
+    }
+
+    .blog-card a.read-link {
+      margin-top: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      text-decoration: none;
+      color: var(--primary);
+    }
+
+    .blog-card a.read-link:hover {
+      text-decoration: underline;
+    }
+
+    /* CTA + CONTACT */
+
     .cta-band {
       margin-top: 34px;
       padding: 16px;
       border-radius: var(--radius-xl);
-      background: radial-gradient(circle at -10% 0, rgba(255,149,100,0.3), rgba(6,9,22,0.98));
-      border: 1px solid rgba(255,255,255,0.16);
-      box-shadow: var(--shadow);
+      background: radial-gradient(circle at -10% 0, rgba(255,155,106,0.22), rgba(231,244,250,0.98));
+      border: 1px solid rgba(22,50,66,0.08);
+      box-shadow: var(--shadow-soft);
       display: grid;
       grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
       gap: 18px;
       align-items: flex-start;
       font-size: 14px;
     }
+
     @media (max-width: 880px) {
       .cta-band {
         grid-template-columns: 1fr;
       }
     }
+
     .cta-band h2 {
       margin: 0 0 8px 0;
       font-size: 22px;
+      color: #163242;
     }
 
     .cta-form {
-      background: rgba(5,8,20,0.98);
+      background: #ffffff;
       border-radius: 20px;
       padding: 12px 13px;
-      border: 1px solid rgba(255,255,255,0.18);
+      border: 1px solid rgba(22,50,66,0.12);
       font-size: 13px;
+      box-shadow: 0 12px 26px rgba(0,0,0,0.06);
     }
+
+    .cta-form h3 {
+      margin-top: 0;
+      margin-bottom: 6px;
+      font-size: 16px;
+      color: #163242;
+    }
+
     .form-row {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 8px;
     }
+
     @media (max-width: 740px) {
       .form-row {
         grid-template-columns: 1fr;
       }
     }
+
     .form-group {
       display: flex;
       flex-direction: column;
       gap: 3px;
       margin-bottom: 6px;
     }
+
     .form-group label {
       font-size: 11px;
       color: var(--muted);
     }
+
     .form-group input,
     .form-group textarea,
     .form-group select {
       border-radius: 10px;
-      border: 1px solid rgba(255,255,255,0.26);
-      background: rgba(2,5,16,0.96);
+      border: 1px solid rgba(22,50,66,0.22);
+      background: #ffffff;
       color: var(--text);
       padding: 7px 8px;
       font-size: 12px;
       font-family: inherit;
     }
+
     .form-group textarea {
       resize: vertical;
       min-height: 70px;
     }
+
     .form-note {
       font-size: 11px;
       color: var(--muted);
       margin-top: 4px;
     }
 
+    /* RESOURCES STRIP ABOVE FOOTER */
+
+    .resources-strip {
+      margin-top: 40px;
+      border-radius: 26px;
+      padding: 16px 18px 14px 18px;
+      background: linear-gradient(135deg, #e9f5ff, #f8fcff);
+      border: 1px solid rgba(22,50,66,0.08);
+      box-shadow: 0 12px 26px rgba(0,0,0,0.05);
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .resources-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+
+    .resources-header h3 {
+      margin: 0;
+      font-size: 16px;
+      color: #163242;
+    }
+
+    .resources-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    @media (max-width: 880px) {
+      .resources-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .resource-pill {
+      border-radius: 16px;
+      padding: 9px 10px;
+      background: #ffffff;
+      border: 1px solid rgba(22,50,66,0.08);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .resource-pill strong {
+      display: block;
+      font-size: 13px;
+      color: #163242;
+      margin-bottom: 3px;
+    }
+
+    /* FOOTER */
+
     footer {
-      border-top: 1px solid rgba(255,255,255,0.16);
-      background: #050712;
-      padding: 18px;
+      border-top: 1px solid rgba(22,50,66,0.12);
+      background: #e4edf3;
+      padding: 18px 18px 22px 18px;
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 32px;
+    }
+
+    .footer-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1.2fr;
+      gap: 18px;
+      margin-bottom: 10px;
+    }
+
+    @media (max-width: 900px) {
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .footer-col-title {
+      font-size: 12px;
+      font-weight: 600;
+      color: #163242;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .footer-text {
       font-size: 11px;
       color: var(--muted);
     }
-    footer a {
-      color: var(--primary-soft);
+
+    .footer-links,
+    .footer-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
     }
 
-    strong.keyword {
+    .footer-links li,
+    .footer-list li {
+      margin-bottom: 4px;
+    }
+
+    .footer-links a,
+    .footer-list a {
+      color: var(--primary);
+      text-decoration: none;
+      font-size: 11px;
+    }
+
+    .footer-links a:hover,
+    .footer-list a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-phone {
+      font-size: 14px;
       font-weight: 700;
-      color: #fffaf3;
+      color: #163242;
+    }
+
+    .footer-phone a {
+      color: #163242;
+      text-decoration: none;
+    }
+
+    .footer-phone a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(22,50,66,0.16);
+      padding-top: 8px;
+      font-size: 10px;
+      color: var(--muted);
+    }
+
+    footer a {
+      color: var(--primary);
     }
   </style>
 
@@ -768,25 +1153,41 @@
 <body>
 
 <header>
-  <div class="nav-inner">
-    <div class="brand-block">
-      <div class="brand-name">WalkInTubWithShower.com</div>
-      <div class="brand-sub">Aging Safely Baths • Family-Owned Since 2012</div>
+  <div class="header-inner">
+    <div class="header-top">
+      <div class="header-phone">
+        Call Toll Free: <a href="tel:1-888-779-2284">1-888-779-2284</a>
+      </div>
+      <div class="header-badge">
+        BBB A+ • Family-owned since 2012
+      </div>
     </div>
-    <nav class="nav-links">
-      <a href="#home">Home</a>
-      <a href="#why">Why Tub + Shower</a>
-      <a href="#builder">Design Tool</a>
-      <a href="#who">Who We Help</a>
-      <a href="#faq">FAQ</a>
-      <a href="#states">Service Areas</a>
-      <a href="#contact" class="nav-cta">Call 1-888-779-2284</a>
-    </nav>
+
+    <div class="nav-row">
+      <div class="brand-block">
+        <!-- Aging Safely logo (hotlinked) -->
+        <img class="brand-logo" src="https://www.agingsafelybaths.com/wp-content/uploads/2020/10/aging-safely-baths-logo.png" alt="Aging Safely Baths logo - Walk in tub with shower">
+        <div class="brand-text-block">
+          <div class="brand-name">WalkInTubWithShower.com</div>
+          <div class="brand-sub">Accessible walk in tub &amp shower combinations</div>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#why">Why Tub + Shower</a>
+        <a href="#builder">Design Tool</a>
+        <a href="#who">Who We Help</a>
+        <a href="#faq">FAQ</a>
+        <a href="#blog">Blog (Coming Soon)</a>
+        <a href="#states">Service Areas</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
   </div>
 </header>
 
 <div class="hero-wrap" id="home">
-  <div class="hero-orb"></div>
+  <div class="bubble-orb"></div>
 
   <div class="hero-grid">
     <div>
@@ -869,7 +1270,7 @@
     <div class="columns">
       <div>
         <div class="card">
-          <div class="card-tag">Homeowners & aging in place</div>
+          <div class="card-tag">Homeowners &amp; aging in place</div>
           <h3>Bath days and shower days in the same space</h3>
           <p>
             A traditional bathtub often forces a choice: climb over a tall wall for every shower, or give up soaking altogether for a step-in shower.
@@ -970,7 +1371,7 @@
       </div>
 
       <div class="aud-card">
-        <h3>🏥 Contractors & care facilities</h3>
+        <h3>🏥 Contractors &amp; care facilities</h3>
         <p>
           Builders, remodelers, nursing homes, assisted living communities and hospitals often need durable, easy-to-clean <strong class="keyword">walk in tub shower combination</strong> solutions that
           support a wide range of residents.
@@ -982,90 +1383,92 @@
     </div>
   </section>
 
-  <!-- BUILDER TOOL -->
+  <!-- BUILDER TOOL IN COLOR BAND -->
   <section id="builder">
-    <h3>🛁 Build your walk in tub with shower plan</h3>
-    <p>
-      Use this simple tool to sketch your ideal <strong class="keyword">walk in tub with shower</strong>. 
-      Drag accessories into the tub area, then send your plan to our team so we can match real models and pricing to what you want.
-    </p>
-
-    <div class="builder-grid">
-      <div>
-        <p><strong>Step 1:</strong> Drag accessories into the tub outline below.</p>
-        <div class="accessory-list">
-          <div class="accessory" draggable="true" data-name="Hydrotherapy water jets">
-            <span class="icon">💧</span> Hydrotherapy water jets
-          </div>
-          <div class="accessory" draggable="true" data-name="Gentle air bubble system">
-            <span class="icon">🫧</span> Gentle air bubble system
-          </div>
-          <div class="accessory" draggable="true" data-name="Heated backrest">
-            <span class="icon">🔥</span> Heated backrest
-          </div>
-          <div class="accessory" draggable="true" data-name="Heated seat">
-            <span class="icon">🧡</span> Heated seat
-          </div>
-          <div class="accessory" draggable="true" data-name="Fast drain system">
-            <span class="icon">⏱️</span> Fast drain system
-          </div>
-          <div class="accessory" draggable="true" data-name="Handheld shower wand">
-            <span class="icon">🚿</span> Handheld shower wand
-          </div>
-          <div class="accessory" draggable="true" data-name="Overhead rain-style shower">
-            <span class="icon">🌧️</span> Overhead rain-style shower
-          </div>
-          <div class="accessory" draggable="true" data-name="Textured floor and step area">
-            <span class="icon">🦶</span> Textured floor & step area
-          </div>
-          <div class="accessory" draggable="true" data-name="Extra grab bars">
-            <span class="icon">🧲</span> Extra grab bars
-          </div>
-          <div class="accessory" draggable="true" data-name="Chromotherapy lighting">
-            <span class="icon">🌈</span> Chromotherapy lighting
-          </div>
-          <div class="accessory" draggable="true" data-name="In-line heater to help maintain water temperature">
-            <span class="icon">♨️</span> In-line heater
-          </div>
-          <div class="accessory" draggable="true" data-name="Ozone or sanitation system">
-            <span class="icon">🫧</span> Ozone / sanitation system
-          </div>
-        </div>
-      </div>
-
-      <div>
-        <p><strong>Step 2:</strong> Drop them into your tub + shower combo.</p>
-        <div class="tub-area" id="tub-dropzone">
-          <div class="tub-label">
-            <span>Drop accessories here to design your combo.</span>
-            <span class="right">🧖‍♀️ Warm soak days • 🚿 Quick shower days</span>
-          </div>
-          <div class="tub-outline">
-            <div class="tub-door"></div>
-            <div class="tub-seat"></div>
-            <div class="tub-shower">🚿</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="builder-output">
-      <p><strong>Step 3:</strong> Review and save your plan.</p>
-      <p>Selected features for your <strong class="keyword">walk in tub with shower</strong>:</p>
-      <ul id="selected-accessories"></ul>
-
-      <textarea id="plan-text" readonly></textarea>
-
-      <div class="builder-actions">
-        <button type="button" class="btn-small primary" id="email-plan-btn">✉️ Email my plan to Aging Safely Baths</button>
-        <button type="button" class="btn-small" id="download-plan-btn">⬇️ Download my plan as a text file</button>
-        <button type="button" class="btn-small" id="clear-plan-btn">🧹 Clear and start over</button>
-      </div>
-
-      <p class="form-note">
-        When you send this plan, an Aging Safely Baths specialist will review it and help you understand which real-world models and price ranges may align.
-        We cannot give medical advice, and we always recommend talking with your doctor before using hydrotherapy features.
+    <div class="color-band">
+      <h3>🛁 Build your walk in tub with shower plan</h3>
+      <p>
+        Use this simple tool to sketch your ideal <strong class="keyword">walk in tub with shower</strong>. 
+        Drag accessories into the tub area, then send your plan to our team so we can match real models and pricing to what you want.
       </p>
+
+      <div class="builder-grid">
+        <div>
+          <p><strong>Step 1:</strong> Drag accessories into the tub outline below.</p>
+          <div class="accessory-list">
+            <div class="accessory" draggable="true" data-name="Hydrotherapy water jets">
+              <span class="icon">💧</span> Hydrotherapy water jets
+            </div>
+            <div class="accessory" draggable="true" data-name="Gentle air bubble system">
+              <span class="icon">🫧</span> Gentle air bubble system
+            </div>
+            <div class="accessory" draggable="true" data-name="Heated backrest">
+              <span class="icon">🔥</span> Heated backrest
+            </div>
+            <div class="accessory" draggable="true" data-name="Heated seat">
+              <span class="icon">🧡</span> Heated seat
+            </div>
+            <div class="accessory" draggable="true" data-name="Fast drain system">
+              <span class="icon">⏱️</span> Fast drain system
+            </div>
+            <div class="accessory" draggable="true" data-name="Handheld shower wand">
+              <span class="icon">🚿</span> Handheld shower wand
+            </div>
+            <div class="accessory" draggable="true" data-name="Overhead rain-style shower">
+              <span class="icon">🌧️</span> Overhead rain-style shower
+            </div>
+            <div class="accessory" draggable="true" data-name="Textured floor and step area">
+              <span class="icon">🦶</span> Textured floor &amp; step area
+            </div>
+            <div class="accessory" draggable="true" data-name="Extra grab bars">
+              <span class="icon">🧲</span> Extra grab bars
+            </div>
+            <div class="accessory" draggable="true" data-name="Chromotherapy lighting">
+              <span class="icon">🌈</span> Chromotherapy lighting
+            </div>
+            <div class="accessory" draggable="true" data-name="In-line heater to help maintain water temperature">
+              <span class="icon">♨️</span> In-line heater
+            </div>
+            <div class="accessory" draggable="true" data-name="Ozone or sanitation system">
+              <span class="icon">🫧</span> Ozone / sanitation system
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <p><strong>Step 2:</strong> Drop them into your tub + shower combo.</p>
+          <div class="tub-area" id="tub-dropzone">
+            <div class="tub-label">
+              <span>Drop accessories here to design your combo.</span>
+              <span class="right">🧖‍♀️ Warm soak days • 🚿 Quick shower days</span>
+            </div>
+            <div class="tub-outline">
+              <div class="tub-door"></div>
+              <div class="tub-seat"></div>
+              <div class="tub-shower">🚿</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="builder-output">
+        <p><strong>Step 3:</strong> Review and save your plan.</p>
+        <p>Selected features for your <strong class="keyword">walk in tub with shower</strong>:</p>
+        <ul id="selected-accessories"></ul>
+
+        <textarea id="plan-text" readonly></textarea>
+
+        <div class="builder-actions">
+          <button type="button" class="btn-small primary" id="email-plan-btn">✉️ Email my plan to Aging Safely Baths</button>
+          <button type="button" class="btn-small" id="download-plan-btn">⬇️ Download my plan as a text file</button>
+          <button type="button" class="btn-small" id="clear-plan-btn">🧹 Clear and start over</button>
+        </div>
+
+        <p class="form-note">
+          When you send this plan, an Aging Safely Baths specialist will review it and help you understand which real-world models and price ranges may align.
+          We cannot give medical advice, and we always recommend talking with your doctor before using hydrotherapy features.
+        </p>
+      </div>
     </div>
   </section>
 
@@ -1150,7 +1553,7 @@
         If you choose turnkey, our team works with you to schedule demolition, installation, testing and cleanup.
       </div>
       <div class="mini-pill">
-        <strong>5️⃣ Walkthrough & support</strong>
+        <strong>5️⃣ Walkthrough &amp; support</strong>
         We explain how the tub and shower features work, and how to use them in a way that fits your comfort level and doctor recommendations.
       </div>
       <div class="mini-pill">
@@ -1277,6 +1680,36 @@
     </div>
   </section>
 
+  <!-- BLOG DASHBOARD (READY FOR POSTS) -->
+  <section id="blog">
+    <div class="section-header">
+      <h2>Walk in tub with shower blog (coming soon)</h2>
+      <div class="section-tagline">
+        Short, practical guides to help you compare options, understand costs and plan safer bathrooms for aging in place.
+      </div>
+    </div>
+
+    <div class="blog-grid">
+      <article class="blog-card">
+        <div class="blog-meta">Planning • Coming soon</div>
+        <h3>How to compare walk in tub with shower combos in a small bathroom</h3>
+        <p>
+          We will walk through measurements, door swings and layout examples so you can quickly see what is realistic in tighter spaces.
+        </p>
+        <span class="read-link">Article coming soon</span>
+      </article>
+
+      <article class="blog-card">
+        <div class="blog-meta">Caregivers • Coming soon</div>
+        <h3>Bathing routines that reduce stress for both you and your loved one</h3>
+        <p>
+          Ideas for turning bath time from a stressful chore into a calmer routine, using design, communication and simple checklists.
+        </p>
+        <span class="read-link">Article coming soon</span>
+      </article>
+    </div>
+  </section>
+
   <!-- STATE DIRECTORY -->
   <section id="states">
     <div class="section-header">
@@ -1304,9 +1737,43 @@
         <a href="https://www.agingsafelybaths.com/about/locations/pennsylvania/" target="_blank" rel="noopener">Pennsylvania walk in tubs</a>
       </div>
       <p style="margin-top:8px; font-size:12px;">
-        To explore more locations, visit the full directory on 
-        <a href="https://www.agingsafelybaths.com/about/locations/" target="_blank" rel="noopener">AgingSafelyBaths.com</a>.
+        To explore more locations and see if we serve your area, visit the full directory on 
+        <a href="https://www.agingsafelybaths.com/about/locations/" target="_blank" rel="noopener">AgingSafelyBaths.com – Locations</a>.
       </p>
+    </div>
+  </section>
+
+  <!-- USEFUL RESOURCES INDEX STRIP -->
+  <section>
+    <div class="resources-strip">
+      <div class="resources-header">
+        <h3>Useful resources for planning your walk in tub with shower</h3>
+        <div style="font-size:12px; color:var(--muted);">
+          Explore these tools and guides before you make any final decisions.
+        </div>
+      </div>
+      <div class="resources-grid">
+        <div class="resource-pill">
+          <strong>📝 Walk-In Tub Planner</strong>
+          Organize measurements, health considerations and must-have features before you talk with any company.
+          <br>
+          <a href="https://walkintubs4less.com/pages/walk-in-tub-planner" target="_blank" rel="noopener">Open the free planner →</a>
+        </div>
+        <div class="resource-pill">
+          <strong>🌎 Check service areas</strong>
+          See where Aging Safely Baths provides walk in tub, walk in tub with shower and accessible shower solutions across the U.S.
+          <br>
+          <a href="https://www.agingsafelybaths.com/about/locations/" target="_blank" rel="noopener">View the locations directory →</a>
+        </div>
+        <div class="resource-pill">
+          <strong>📚 Learn about walk in tubs &amp; safety</strong>
+          Read more about bathroom safety, hydrotherapy and accessibility on our main site.
+          <br>
+          <a href="https://www.agingsafelybaths.com/walk-in-tubs/" target="_blank" rel="noopener">Walk in tubs overview →</a>
+          &nbsp;•&nbsp;
+          <a href="https://www.agingsafelybaths.com/handicap-showers/" target="_blank" rel="noopener">Handicap &amp; roll in showers →</a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -1404,25 +1871,58 @@
 </main>
 
 <footer>
-  <div style="max-width:1160px; margin:0 auto;">
-    WalkInTubWithShower.com is operated by Aging Safely Baths, a family-owned company focused on walk in tubs, walk in tub with shower combinations and accessible showers since 2012.
-    <br>
-    Visit our main site for more details:
-    <a href="https://www.agingsafelybaths.com/walk-in-tubs/" target="_blank" rel="noopener">AgingSafelyBaths.com – Walk In Tubs</a>
-    and
-    <a href="https://www.agingsafelybaths.com/handicap-showers/" target="_blank" rel="noopener">Handicap & Roll In Showers</a>.
-    <br><br>
-    Call Toll Free: 1-888-779-2284
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-col-title">About Aging Safely Baths</div>
+        <div class="footer-text">
+          WalkInTubWithShower.com is operated by Aging Safely Baths, a family-owned company focused on walk in tubs, walk in tub with shower combinations and accessible showers since 2012.
+          We work with seniors, caregivers, contractors and facilities across many parts of the U.S. and Canada.
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Quick links</div>
+        <ul class="footer-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#why">Why tub + shower</a></li>
+          <li><a href="#builder">Design tool</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contact &amp; quotes</a></li>
+          <li><a href="https://walkintubs4less.com/pages/walk-in-tub-planner" target="_blank" rel="noopener">Walk-In Tub Planner</a></li>
+          <li><a href="https://www.agingsafelybaths.com/walk-in-tubs/" target="_blank" rel="noopener">Walk in tubs – main site</a></li>
+          <li><a href="https://www.agingsafelybaths.com/handicap-showers/" target="_blank" rel="noopener">Handicap &amp; roll in showers</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Service areas &amp; contact</div>
+        <ul class="footer-list">
+          <li>Check if we serve your area:</li>
+          <li><a href="https://www.agingsafelybaths.com/about/locations/" target="_blank" rel="noopener">View all state locations →</a></li>
+          <li style="margin-top:6px;" class="footer-phone">
+            Call Toll Free: <a href="tel:1-888-779-2284">1-888-779-2284</a>
+          </li>
+          <li style="margin-top:4px;">Email: <a href="mailto:sales@agingsafelybaths.com">sales@agingsafelybaths.com</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      This website and its content are for general educational and planning purposes only and are not a substitute for medical advice. 
+      Always consult your healthcare provider before using hydrotherapy or making changes to your bathing routine.
+    </div>
   </div>
 </footer>
 
+<!-- EmailJS for contact form -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 <script>
   // === Drag and drop builder ===
   const accessories = document.querySelectorAll('.accessory');
   const dropzone = document.getElementById('tub-dropzone');
   const selectedList = document.getElementById('selected-accessories');
   const planText = document.getElementById('plan-text');
-
   const selectedSet = new Set();
 
   accessories.forEach(acc => {
@@ -1433,16 +1933,16 @@
 
   dropzone.addEventListener('dragover', e => {
     e.preventDefault();
-    dropzone.style.borderColor = 'rgba(255,149,100,0.8)';
+    dropzone.style.borderColor = 'rgba(255,155,106,0.9)';
   });
 
   dropzone.addEventListener('dragleave', () => {
-    dropzone.style.borderColor = 'rgba(255,255,255,0.25)';
+    dropzone.style.borderColor = 'rgba(26,109,150,0.35)';
   });
 
   dropzone.addEventListener('drop', e => {
     e.preventDefault();
-    dropzone.style.borderColor = 'rgba(255,255,255,0.25)';
+    dropzone.style.borderColor = 'rgba(26,109,150,0.35)';
     const name = e.dataTransfer.getData('text/plain');
     if (name && !selectedSet.has(name)) {
       selectedSet.add(name);
@@ -1497,28 +1997,33 @@ Notes:
     URL.revokeObjectURL(url);
   });
 
-  // === Contact form stub (ready for EmailJS or backend) ===
-  document.getElementById('wits-contact-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    alert('Thank you! Your request has been captured. Please connect this form to EmailJS or your preferred form handler so submissions are delivered to sales@agingsafelybaths.com.');
-  });
+  // === EmailJS wiring for main contact form ===
+  document.addEventListener('DOMContentLoaded', function () {
+    if (window.emailjs) {
+      emailjs.init('alWutsHLG6c3h9P2j'); // Public key from your EmailJS settings
+    }
 
-  /*
-  // Example EmailJS wiring:
-  (function(){
-    emailjs.init("YOUR_PUBLIC_KEY_HERE");
-  })();
+    const contactForm = document.getElementById('wits-contact-form');
+    if (contactForm) {
+      contactForm.addEventListener('submit', function (e) {
+        e.preventDefault();
 
-  document.getElementById('wits-contact-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
-      .then(function() {
-        alert('Thank you! Your message has been sent to Aging Safely Baths.');
-      }, function(error) {
-        alert('There was an issue sending your request. Please call 1-888-779-2284.');
+        if (!window.emailjs) {
+          alert('Thank you for your request. Please call 1-888-779-2284 if this form does not submit correctly.');
+          return;
+        }
+
+        emailjs.sendForm('service_usimtub', 'template_5n0cskt', this)
+          .then(function () {
+            alert('Thank you! Your message has been sent. An Aging Safely Baths representative will follow up shortly.');
+            contactForm.reset();
+          }, function (error) {
+            console.error('EmailJS error:', error);
+            alert('There was an issue sending your request. Please call 1-888-779-2284 or email sales@agingsafelybaths.com.');
+          });
       });
+    }
   });
-  */
 </script>
 
 </body>
