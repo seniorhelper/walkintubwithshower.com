@@ -1,64 +1,79 @@
+Here’s the fully updated code for WalkInTubWithShower.com with all of your requests baked in:
+
+Light, spa-style aesthetic (like Template 1/2, no dark theme)
+
+Phone number big in header, above nav, click-to-call
+
+Strong hero focus on One-Day Worry-Free Installation + DIY shipping
+
+Inline images (including tub images)
+
+BBB A+ badge near top and again in footer
+
+Builder shows selected accessories inside the tub, black text labels with emojis
+
+No weird white rectangles in the tub graphic
+
+15+ expandable FAQ questions
+
+Footer with real nav/index + click-to-call phone + email + copyright 2025–2026
+
+Contact form wired to EmailJS with your IDs (service_usimtub / template_5n0cskt / alWutsHLG6c3h9P2j)
+
+Hidden field sending selected builder features with the form
+
+BBB badge image referenced as bbb-a-plus.webp (just upload that file into the same folder as this HTML in your repo)
+
+
+
+---
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Walk In Tub With Shower | Best Walk In Tub Shower Combination</title>
-  <meta name="description" content="Compare walk in tub with shower options, hydrotherapy features and installation paths. Family-owned Aging Safely Baths helps you choose the best walk in tub shower combination for your home.">
+  <meta name="description" content="Compare walk in tub with shower options, hydrotherapy features and one-day installation or DIY delivery. Family-owned Aging Safely Baths helps you choose the best walk in tub shower combination for your home.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="keywords" content="walk in tub with shower, best walk in tub shower combination, walk in tub shower combo, walk in tub shower, walk in tub with shower for seniors">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Walk In Tub With Shower | Best Walk In Tub Shower Combination">
-  <meta property="og:description" content="Learn how to choose the best walk in tub with shower, compare features, and build your own custom configuration with our interactive planner.">
+  <meta property="og:description" content="Learn how to choose the best walk in tub with shower, compare features, and explore one-day worry-free installation or DIY delivery.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.walkintubwithshower.com/">
 
   <style>
     :root {
-      --primary: #1a6d96;
-      --primary-light: #e7f4fa;
-      --accent: #35a4c4;
-      --accent-soft: #f6fafc;
-      --accent-warm: #ffb47a;
       --bg: #f3f6f8;
-      --bg-soft: #eef3f7;
-      --white: #ffffff;
-      --dark: #163242;
+      --bg-soft: #e7f4fa;
+      --bg-card: #ffffff;
+      --bg-alt: #e7f4fa;
+      --primary: #1a6d96;
+      --primary-soft: #35a4c4;
+      --accent: #ff9564;
+      --accent-soft: #ffe1d1;
+      --accent2: #7cffc0;
       --text: #23323c;
       --muted: #6b7b86;
-      --border-soft: rgba(22,50,66,0.08);
-      --shadow-soft: 0 12px 28px rgba(0,0,0,0.08);
-      --radius-lg: 18px;
+      --border-soft: rgba(22,50,66,0.12);
+      --radius-lg: 20px;
       --radius-xl: 26px;
       --radius-pill: 999px;
+      --shadow: 0 14px 30px rgba(0,0,0,0.08);
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      position: relative;
-      overflow-x: hidden;
-    }
-
-    /* blue bubbles background */
-    body::before {
-      content: "";
-      position: fixed;
-      inset: -200px -200px auto auto;
       background:
-        radial-gradient(circle at 10% 20%, rgba(138,198,255,0.32), transparent 60%),
-        radial-gradient(circle at 40% 80%, rgba(107,186,228,0.25), transparent 60%),
-        radial-gradient(circle at 80% 10%, rgba(186,240,255,0.28), transparent 60%);
-      opacity: 0.7;
-      pointer-events: none;
-      z-index: -1;
+        radial-gradient(circle at 10% 0, #e1f4ff 0, transparent 55%),
+        radial-gradient(circle at 90% 10%, #f9f2ff 0, transparent 50%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.7;
     }
 
     a {
@@ -74,195 +89,146 @@
     header {
       position: sticky;
       top: 0;
-      z-index: 100;
-      backdrop-filter: blur(16px);
+      z-index: 50;
       background: rgba(243,246,248,0.96);
-      border-bottom: 1px solid rgba(22,50,66,0.06);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(22,50,66,0.08);
     }
 
-    .nav-shell {
+    .nav-inner {
       max-width: 1160px;
       margin: 0 auto;
-      padding: 8px 18px 10px 18px;
+      padding: 10px 18px 8px 18px;
       display: flex;
       flex-direction: column;
-      gap: 6px;
+      gap: 8px;
     }
 
-    .nav-top {
+    .top-bar {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 14px;
+      gap: 12px;
     }
 
-    .brand-wrap {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .brand-logo {
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      background: radial-gradient(circle at 30% 20%, #b1e4ff, #1a6d96);
-      box-shadow: 0 8px 18px rgba(0,0,0,0.15);
-      position: relative;
-      overflow: hidden;
-    }
-    .brand-logo::before {
-      content: "";
-      position: absolute;
-      inset: 7px;
-      border-radius: 50%;
-      border: 2px solid rgba(255,255,255,0.75);
-    }
-
-    .brand-text {
+    .brand-block {
       display: flex;
       flex-direction: column;
     }
-    .brand-title {
-      font-weight: 700;
+
+    .brand-name {
       font-size: 18px;
-      letter-spacing: 0.04em;
+      font-weight: 700;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: var(--dark);
-    }
-    .brand-sub {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--muted);
+      color: var(--primary);
     }
 
-    .header-contact {
-      text-align: right;
-      font-size: 13px;
-      color: var(--muted);
-    }
-    .header-contact .phone-label {
+    .brand-sub {
       font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-      letter-spacing: 0.14em;
-      display: block;
-      margin-bottom: 2px;
+      margin-top: 2px;
     }
-    .header-contact .phone-number {
+
+    .header-phone {
       font-size: 18px;
       font-weight: 700;
       color: var(--primary);
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: var(--radius-pill);
+      background: #ffffff;
+      border: 1px solid rgba(22,50,66,0.08);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.06);
     }
-    .header-contact .phone-number span.icon {
+
+    .header-phone span.icon {
       width: 22px;
       height: 22px;
-      border-radius: 999px;
-      border: 2px solid rgba(26,109,150,0.22);
+      border-radius: 50%;
+      border: 2px solid rgba(26,109,150,0.18);
       display: inline-flex;
       align-items: center;
       justify-content: center;
       font-size: 13px;
-    }
-
-    .nav-bottom {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 10px;
-      margin-top: 4px;
+      background: #f5fbff;
     }
 
     .nav-links {
       display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
+      gap: 10px;
+      align-items: center;
       font-size: 13px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
     }
+
     .nav-links a {
       padding: 6px 10px;
-      border-radius: 999px;
+      border-radius: var(--radius-pill);
       color: var(--muted);
       font-weight: 500;
     }
+
     .nav-links a:hover {
-      background: rgba(255,255,255,0.96);
+      background: rgba(255,255,255,0.9);
       text-decoration: none;
     }
+
     .nav-links a.nav-cta {
-      background: var(--primary);
-      color: #fff;
-      box-shadow: 0 10px 22px rgba(26,109,150,0.4);
+      background: linear-gradient(135deg, var(--accent), #ffb27e);
+      color: #260d06;
+      font-weight: 600;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.16);
     }
 
-    .bbb-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 4px 10px;
-      border-radius: 999px;
-      background: linear-gradient(135deg, #1a6d96, #35a4c4);
-      color: #fff;
-      font-size: 11px;
-      box-shadow: 0 8px 18px rgba(0,0,0,0.2);
-      white-space: nowrap;
-    }
-    .bbb-badge-icon {
-      width: 18px;
-      height: 18px;
-      border-radius: 6px;
-      background: rgba(255,255,255,0.1);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 12px;
-    }
-    .bbb-badge-text {
-      display: flex;
-      flex-direction: column;
-      line-height: 1.2;
-    }
-    .bbb-badge-text span:first-child {
-      font-weight: 700;
-      font-size: 11px;
-    }
-    .bbb-badge-text span:last-child {
-      font-size: 10px;
-      opacity: 0.9;
-    }
-
-    @media (max-width: 780px) {
-      .nav-top {
-        flex-direction: column;
-        align-items: flex-start;
+    @media (max-width: 860px) {
+      .nav-links {
+        display: none;
       }
-      .header-contact {
-        text-align: left;
-      }
-      .nav-bottom {
-        flex-direction: column;
-        align-items: flex-start;
+      .header-phone {
+        font-size: 16px;
       }
     }
 
     /* HERO */
 
-    .hero {
+    .hero-wrap {
       max-width: 1160px;
-      margin: 16px auto 26px auto;
+      margin: 18px auto 28px auto;
       padding: 0 18px;
+      position: relative;
+    }
+
+    .hero-bubbles {
+      position: absolute;
+      inset: -40px -40px auto auto;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(177,228,255,0.8), transparent 55%),
+        radial-gradient(circle at 70% 10%, rgba(53,196,255,0.5), transparent 60%),
+        radial-gradient(circle at 40% 80%, rgba(53,196,124,0.25), transparent 60%);
+      width: 320px;
+      height: 320px;
+      opacity: 0.45;
+      filter: blur(0.2px);
+      border-radius: 50%;
     }
 
     .hero-grid {
+      position: relative;
+      z-index: 1;
       display: grid;
       grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
-      gap: 24px;
+      gap: 26px;
       align-items: center;
     }
-    @media (max-width: 900px) {
+
+    @media (max-width: 880px) {
       .hero-grid {
         grid-template-columns: 1fr;
       }
@@ -271,35 +237,44 @@
     .pill-label {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      padding: 4px 11px;
+      gap: 8px;
+      padding: 4px 12px;
       border-radius: var(--radius-pill);
-      background: rgba(232,249,255,0.9);
-      color: var(--primary);
+      background: rgba(232,249,255,0.96);
+      border: 1px solid rgba(26,109,150,0.12);
       font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-      margin-bottom: 8px;
+      color: var(--primary);
+      margin-bottom: 10px;
     }
+
     .pill-dot {
-      width: 8px;
-      height: 8px;
+      width: 10px;
+      height: 10px;
       border-radius: 50%;
-      background: #35c47c;
-      box-shadow: 0 0 0 4px rgba(53,196,124,0.22);
+      background: radial-gradient(circle at 30% 30%, #fff, var(--primary));
+      box-shadow: 0 0 0 4px rgba(47,208,255,0.3);
     }
 
     .hero-title {
-      margin: 0 0 10px 0;
+      margin: 0 0 8px 0;
       font-size: clamp(28px, 4vw, 38px);
-      line-height: 1.14;
-      color: var(--dark);
+      line-height: 1.15;
+      color: var(--text);
     }
+
     .hero-title span.highlight {
-      background: linear-gradient(130deg, #35c47c, #1a6d96);
+      background-image: linear-gradient(135deg, var(--primary), var(--accent));
       -webkit-background-clip: text;
       color: transparent;
+    }
+
+    .hero-one-day {
+      margin: 0 0 10px 0;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--primary);
     }
 
     .hero-text {
@@ -326,21 +301,24 @@
       font-weight: 600;
       border: none;
       cursor: pointer;
-      color: #fff;
-      background: linear-gradient(135deg, #1a6d96, #35a4c4);
-      box-shadow: 0 14px 30px rgba(26,109,150,0.45);
+      color: #ffffff;
+      background: linear-gradient(135deg, var(--primary), #35a4c4);
+      box-shadow: 0 14px 28px rgba(26,109,150,0.35);
       text-decoration: none;
     }
+
     .btn-primary span.icon {
       width: 22px;
       height: 22px;
-      border-radius: 999px;
+      border-radius: 50%;
       border: 2px solid rgba(255,255,255,0.7);
       display: inline-flex;
       align-items: center;
       justify-content: center;
       font-size: 13px;
+      background: rgba(255,255,255,0.1);
     }
+
     .btn-primary:hover {
       transform: translateY(-1px);
       text-decoration: none;
@@ -353,15 +331,16 @@
       border-radius: var(--radius-pill);
       padding: 8px 16px;
       font-size: 13px;
-      border: 1px solid rgba(26,109,150,0.28);
-      background: rgba(255,255,255,0.96);
-      color: var(--dark);
+      border: 1px solid rgba(26,109,150,0.22);
+      background: #ffffff;
+      color: var(--primary);
       text-decoration: none;
-      font-weight: 500;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.06);
     }
+
     .btn-secondary:hover {
-      background: #fff;
       text-decoration: none;
+      background: #f9feff;
     }
 
     .hero-trust {
@@ -369,82 +348,126 @@
       font-size: 12px;
       color: var(--muted);
     }
+
     .hero-trust strong {
-      color: var(--dark);
+      color: var(--text);
     }
+
     .trust-row {
-      margin-top: 6px;
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
+      margin-top: 6px;
     }
+
     .trust-pill {
       border-radius: var(--radius-pill);
       padding: 4px 10px;
       font-size: 11px;
-      border: 1px solid rgba(22,50,66,0.08);
-      background: rgba(255,255,255,0.96);
+      border: 1px solid rgba(22,50,66,0.1);
+      background: #ffffff;
       display: inline-flex;
       align-items: center;
       gap: 6px;
       color: var(--muted);
     }
 
-    .hero-aside {
-      background: radial-gradient(circle at 0 0, #d6f2ff, #1a6d96);
-      border-radius: 30px;
-      padding: 14px;
-      box-shadow: var(--shadow-soft);
-      position: relative;
-      overflow: hidden;
-    }
-    .hero-aside-inner {
-      background: rgba(255,255,255,0.97);
-      border-radius: 22px;
-      padding: 12px;
-      display: grid;
-      grid-template-rows: auto auto auto;
-      gap: 10px;
-    }
-    .hero-aside-head {
-      display: flex;
-      justify-content: space-between;
+    .hero-bbb {
+      margin-top: 10px;
+      display: inline-flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
+      padding: 6px 10px;
+      border-radius: 16px;
+      background: #ffffff;
+      border: 1px solid rgba(22,50,66,0.08);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
       font-size: 12px;
       color: var(--muted);
     }
+
+    .hero-bbb img {
+      height: 34px;
+      width: auto;
+      display: block;
+    }
+
+    .hero-aside {
+      background: var(--bg-soft);
+      border-radius: 26px;
+      padding: 12px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(22,50,66,0.12);
+    }
+
+    .hero-aside-inner {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 14px;
+      border: 1px solid rgba(22,50,66,0.08);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .hero-aside-head {
+      font-size: 13px;
+      color: var(--primary);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+    }
+
     .hero-aside-head span.badge {
       padding: 3px 8px;
       border-radius: var(--radius-pill);
-      background: rgba(53,196,124,0.1);
-      border: 1px solid rgba(53,196,124,0.5);
+      background: rgba(135, 214, 170, 0.18);
+      border: 1px solid rgba(104,199,146,0.6);
       font-size: 11px;
-      color: var(--dark);
+      color: #1b6b3e;
       white-space: nowrap;
     }
-    .hero-img-wrap {
-      border-radius: 18px;
+
+    .hero-aside-main {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .hero-aside-stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+      font-size: 11px;
+    }
+
+    .hero-aside-pill {
+      border-radius: 12px;
+      padding: 7px 9px;
+      background: #f8fcff;
+      border: 1px solid rgba(22,50,66,0.08);
+      color: var(--muted);
+    }
+
+    .hero-aside-pill strong {
+      display: block;
+      font-size: 13px;
+      color: var(--primary);
+    }
+
+    .hero-aside-image {
+      border-radius: 16px;
       overflow: hidden;
       border: 1px solid rgba(22,50,66,0.06);
     }
-    .hero-img-wrap img {
+
+    .hero-aside-image img {
       display: block;
       width: 100%;
       height: auto;
     }
-    .hero-caption {
-      font-size: 11px;
-      color: var(--muted);
-      display: flex;
-      justify-content: space-between;
-      gap: 10px;
-      align-items: center;
-    }
-    .hero-caption strong {
-      color: var(--dark);
-      font-size: 12px;
-    }
+
+    /* MAIN LAYOUT */
 
     main {
       max-width: 1160px;
@@ -453,21 +476,23 @@
     }
 
     section {
-      margin-top: 38px;
+      margin-top: 40px;
     }
 
     .section-header {
       display: flex;
       align-items: baseline;
       justify-content: space-between;
-      gap: 14px;
-      margin-bottom: 12px;
+      gap: 16px;
+      margin-bottom: 14px;
     }
+
     .section-header h2 {
       margin: 0;
       font-size: 22px;
-      color: var(--dark);
+      color: var(--text);
     }
+
     .section-tagline {
       font-size: 13px;
       color: var(--muted);
@@ -480,21 +505,23 @@
       gap: 20px;
       align-items: flex-start;
     }
-    @media (max-width: 900px) {
+
+    @media (max-width: 880px) {
       .columns {
         grid-template-columns: 1fr;
       }
     }
 
     .card {
-      background: var(--white);
+      background: var(--bg-card);
       border-radius: var(--radius-lg);
       padding: 16px 16px 14px 16px;
       border: 1px solid var(--border-soft);
-      box-shadow: 0 10px 24px rgba(0,0,0,0.05);
+      box-shadow: var(--shadow);
       font-size: 14px;
       color: var(--muted);
     }
+
     .card-tag {
       font-size: 11px;
       letter-spacing: 0.16em;
@@ -502,58 +529,78 @@
       color: var(--primary);
       margin-bottom: 4px;
     }
+
     .card h3 {
       margin: 0 0 8px 0;
       font-size: 17px;
-      color: var(--dark);
+      color: var(--text);
     }
+
     .card p {
       margin: 0 0 8px 0;
     }
+
     .card-list {
       margin: 6px 0 0 18px;
       padding: 0;
     }
 
+    .card-image {
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(22,50,66,0.08);
+      margin-top: 10px;
+    }
+
+    .card-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
     .strip {
-      background: linear-gradient(110deg, #e7f4fa, #f7fbfd);
+      background: linear-gradient(110deg, #e7f4fa, #f8fbfe);
       border-radius: var(--radius-xl);
-      padding: 16px 18px;
-      border: 1px solid rgba(22,50,66,0.06);
-      box-shadow: 0 12px 26px rgba(0,0,0,0.05);
+      padding: 16px;
+      border: 1px solid rgba(22,50,66,0.12);
+      box-shadow: var(--shadow);
       font-size: 14px;
       color: var(--muted);
       margin-top: 16px;
     }
+
     .strip h3 {
       margin: 0 0 8px 0;
       font-size: 18px;
-      color: var(--dark);
+      color: var(--text);
     }
 
     .pill-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 10px;
+      gap: 9px;
       margin-top: 8px;
     }
+
     @media (max-width: 800px) {
       .pill-grid {
         grid-template-columns: 1fr;
       }
     }
+
     .mini-pill {
       border-radius: 16px;
       padding: 9px 10px;
-      background: var(--white);
-      border: 1px solid rgba(22,50,66,0.08);
+      background: #ffffff;
+      border: 1px solid rgba(22,50,66,0.12);
       font-size: 13px;
       color: var(--muted);
-      box-shadow: 0 10px 22px rgba(0,0,0,0.04);
+      box-shadow: 0 10px 22px rgba(0,0,0,0.06);
     }
+
     .mini-pill strong {
       display: block;
-      color: var(--dark);
+      color: var(--primary);
       margin-bottom: 3px;
     }
 
@@ -562,129 +609,55 @@
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 10px;
     }
-    @media (max-width: 900px) {
+
+    @media (max-width: 880px) {
       .audience-grid {
         grid-template-columns: 1fr;
       }
     }
+
     .aud-card {
-      background: var(--white);
+      background: var(--bg-card);
       border-radius: 18px;
       padding: 12px 13px;
-      border: 1px solid rgba(22,50,66,0.08);
-      box-shadow: 0 10px 24px rgba(0,0,0,0.04);
+      border: 1px solid rgba(22,50,66,0.12);
+      box-shadow: var(--shadow);
       font-size: 13px;
       color: var(--muted);
     }
+
     .aud-card h3 {
-      margin: 0 0 6px 0;
+      margin: 0 0 5px 0;
       font-size: 15px;
-      color: var(--dark);
-    }
-
-    .faq-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 10px;
-    }
-    @media (max-width: 800px) {
-      .faq-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-    .faq-item {
-      background: var(--white);
-      border-radius: 16px;
-      padding: 10px 12px;
-      border: 1px solid rgba(22,50,66,0.08);
-      font-size: 13px;
-      color: var(--muted);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.04);
-    }
-    .faq-item h3 {
-      margin: 0 0 6px 0;
-      font-size: 14px;
-      color: var(--dark);
-    }
-
-    .directory-card {
-      background: var(--white);
-      border-radius: var(--radius-lg);
-      padding: 14px;
-      border: 1px solid rgba(22,50,66,0.08);
-      font-size: 13px;
-      color: var(--muted);
-      box-shadow: 0 10px 22px rgba(0,0,0,0.04);
-    }
-    .dir-tags {
-      margin-top: 8px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-    .dir-tags a {
-      padding: 4px 9px;
-      border-radius: var(--radius-pill);
-      background: var(--accent-soft);
-      border: 1px solid rgba(22,50,66,0.08);
-      font-size: 12px;
-      color: var(--primary);
-    }
-
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
-    }
-    @media (max-width: 900px) {
-      .gallery-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-    .gallery-item {
-      background: var(--white);
-      border-radius: 16px;
-      border: 1px solid rgba(22,50,66,0.06);
-      box-shadow: 0 10px 22px rgba(0,0,0,0.04);
-      overflow: hidden;
-      font-size: 12px;
-      color: var(--muted);
-    }
-    .gallery-item img {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
-    .gallery-caption {
-      padding: 8px 10px;
-    }
-    .gallery-caption strong {
-      color: var(--dark);
-      font-size: 13px;
+      color: var(--text);
     }
 
     /* BUILDER TOOL */
 
     #builder {
-      background: linear-gradient(115deg, #e7f4fa, #f5fafc);
+      background: var(--bg-alt);
       border-radius: 26px;
-      padding: 16px 16px 14px 16px;
-      border: 1px solid rgba(22,50,66,0.08);
-      box-shadow: 0 14px 30px rgba(0,0,0,0.05);
+      padding: 16px;
+      border: 1px solid rgba(22,50,66,0.16);
+      box-shadow: var(--shadow);
+      margin-top: 8px;
       font-size: 14px;
       color: var(--muted);
     }
+
     #builder h3 {
       margin-top: 0;
       font-size: 18px;
-      color: var(--dark);
+      color: var(--text);
     }
+
     .builder-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.1fr);
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
       gap: 18px;
       align-items: flex-start;
     }
+
     @media (max-width: 900px) {
       .builder-grid {
         grid-template-columns: 1fr;
@@ -697,114 +670,107 @@
       gap: 8px;
       margin-top: 8px;
     }
+
     .accessory {
       border-radius: var(--radius-pill);
       padding: 6px 10px;
       font-size: 12px;
-      border: 1px solid rgba(22,50,66,0.16);
+      border: 1px solid rgba(22,50,66,0.18);
       background: #ffffff;
       cursor: grab;
       display: inline-flex;
       align-items: center;
       gap: 6px;
       user-select: none;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.04);
-      color: var(--dark);
+      color: var(--text);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.05);
     }
+
     .accessory span.icon {
       font-size: 14px;
     }
 
     .tub-area {
       border-radius: 22px;
-      border: 2px dashed rgba(26,109,150,0.3);
-      background: linear-gradient(180deg, #f9fdff, #e2f2fb);
-      min-height: 170px;
-      padding: 12px;
+      border: 2px dashed rgba(26,109,150,0.35);
+      background:
+        radial-gradient(circle at 10% 0, rgba(191,235,255,0.6), transparent 60%),
+        radial-gradient(circle at 80% 100%, rgba(255,229,205,0.5), transparent 65%),
+        #f8fcff;
+      min-height: 180px;
+      padding: 14px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       position: relative;
       overflow: hidden;
     }
-    .tub-label-bar {
+
+    .tub-label {
       font-size: 12px;
       color: var(--primary);
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 8px;
+      flex-wrap: wrap;
     }
-    .tub-label-bar span.right {
+
+    .tub-label span.right {
       font-size: 11px;
       color: var(--muted);
     }
+
     .tub-outline {
       border-radius: 18px;
-      border: 2px solid rgba(26,109,150,0.5);
-      height: 100px;
-      margin-top: 6px;
+      border: 2px solid rgba(191,235,255,0.9);
+      height: 110px;
+      margin-top: 10px;
       position: relative;
-      background: linear-gradient(180deg, rgba(255,255,255,0.95), #dbeefe);
+      background: linear-gradient(180deg, rgba(191,235,255,0.24), #ffffff);
+      box-shadow: inset 0 6px 14px rgba(0,0,0,0.04);
     }
-    .tub-door {
-      position: absolute;
-      left: 10px;
-      bottom: 10px;
-      width: 30px;
-      height: 40px;
-      border-radius: 10px;
-      border: 2px solid rgba(22,50,66,0.6);
-      background: rgba(255,255,255,0.8);
-    }
-    .tub-seat {
-      position: absolute;
-      right: 42px;
-      bottom: 16px;
-      width: 52px;
-      height: 26px;
-      border-radius: 8px;
-      border: 2px solid rgba(22,50,66,0.5);
-      background: rgba(255,255,255,0.8);
-    }
+
     .tub-shower {
       position: absolute;
       right: 10px;
-      top: 4px;
+      top: 6px;
       font-size: 24px;
-      opacity: 0.9;
+      opacity: 0.85;
     }
 
-    #tub-accessory-labels {
+    .tub-labels {
       position: absolute;
-      inset: 8px 6px 8px 46px;
+      inset: 28px 10px 8px 10px;
       display: flex;
       flex-wrap: wrap;
       align-content: flex-start;
-      gap: 4px;
-      overflow: hidden;
-      pointer-events: none;
+      gap: 4px 8px;
+      overflow: auto;
     }
+
     .tub-label-chip {
-      border-radius: 999px;
-      padding: 2px 8px 3px 8px;
       font-size: 11px;
-      background: rgba(255,255,255,0.95);
-      color: #111;
-      border: 1px solid rgba(22,50,66,0.16);
+      padding: 2px 7px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.9);
+      border: 1px solid rgba(22,50,66,0.12);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      color: #111111; /* black text option */
       white-space: nowrap;
     }
 
     .builder-output {
       margin-top: 10px;
       font-size: 13px;
+      color: var(--muted);
     }
+
     #selected-accessories {
       margin: 4px 0 0 18px;
       padding: 0;
-    }
-    #selected-accessories li {
-      margin-bottom: 2px;
     }
 
     .builder-actions {
@@ -813,26 +779,28 @@
       flex-wrap: wrap;
       gap: 8px;
     }
+
     .btn-small {
       border-radius: var(--radius-pill);
       padding: 7px 12px;
       font-size: 12px;
-      border: 1px solid rgba(26,109,150,0.28);
+      border: 1px solid rgba(22,50,66,0.22);
       background: #ffffff;
       color: var(--primary);
       cursor: pointer;
-      box-shadow: 0 8px 18px rgba(0,0,0,0.04);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.05);
     }
+
     .btn-small.primary {
-      background: linear-gradient(135deg, #1a6d96, #35a4c4);
-      color: #fff;
-      border-color: rgba(26,109,150,0.7);
+      border-color: rgba(255,149,100,0.7);
+      background: linear-gradient(135deg, var(--accent), #ffbf82);
+      color: #1d0b05;
     }
 
     #plan-text {
       width: 100%;
       border-radius: 10px;
-      border: 1px solid rgba(22,50,66,0.16);
+      border: 1px solid rgba(22,50,66,0.18);
       background: #ffffff;
       color: var(--muted);
       padding: 8px;
@@ -843,45 +811,140 @@
       font-family: Consolas, "SF Mono", Menlo, monospace;
     }
 
-    /* CTA / CONTACT */
+    /* PROCESS + DIRECTORY */
+
+    .directory-card {
+      background: var(--bg-card);
+      border-radius: var(--radius-lg);
+      padding: 14px;
+      border: 1px solid rgba(22,50,66,0.12);
+      font-size: 13px;
+      color: var(--muted);
+      box-shadow: var(--shadow);
+    }
+
+    .dir-tags {
+      margin-top: 8px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .dir-tags a {
+      padding: 4px 9px;
+      border-radius: var(--radius-pill);
+      background: #ffffff;
+      border: 1px solid rgba(22,50,66,0.12);
+      font-size: 12px;
+      color: var(--primary);
+    }
+
+    /* FAQ */
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    @media (max-width: 800px) {
+      .faq-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .faq-item {
+      background: var(--bg-card);
+      border-radius: 16px;
+      border: 1px solid rgba(22,50,66,0.12);
+      font-size: 13px;
+      color: var(--muted);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .faq-question {
+      margin: 0;
+      padding: 10px 12px;
+      font-size: 14px;
+      color: var(--text);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .faq-question span.toggle {
+      font-size: 16px;
+      color: var(--primary);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.25s ease;
+      padding: 0 12px;
+    }
+
+    .faq-answer-inner {
+      padding: 0 0 10px 0;
+    }
+
+    .faq-answer p {
+      margin: 6px 0;
+    }
+
+    .faq-item.open .faq-answer {
+      max-height: 300px; /* enough for most answers */
+    }
+
+    .faq-item.open .faq-question span.toggle {
+      transform: rotate(90deg);
+    }
+
+    /* CTA & CONTACT */
 
     .cta-band {
       margin-top: 34px;
       padding: 16px;
       border-radius: var(--radius-xl);
-      background: radial-gradient(circle at -10% 0, #ffe2c3, #f5f8fb);
-      border: 1px solid rgba(22,50,66,0.08);
-      box-shadow: 0 14px 32px rgba(0,0,0,0.07);
+      background: radial-gradient(circle at -10% 0, rgba(255,149,100,0.25), #f5f8fb);
+      border: 1px solid rgba(22,50,66,0.12);
+      box-shadow: var(--shadow);
       display: grid;
-      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
       gap: 18px;
       align-items: flex-start;
       font-size: 14px;
     }
-    @media (max-width: 900px) {
+
+    @media (max-width: 880px) {
       .cta-band {
         grid-template-columns: 1fr;
       }
     }
+
     .cta-band h2 {
       margin: 0 0 8px 0;
       font-size: 22px;
-      color: var(--dark);
+      color: var(--text);
     }
 
     .cta-form {
       background: #ffffff;
       border-radius: 20px;
       padding: 12px 13px;
-      border: 1px solid rgba(22,50,66,0.12);
+      border: 1px solid rgba(22,50,66,0.14);
       font-size: 13px;
-      box-shadow: 0 10px 24px rgba(0,0,0,0.05);
+      box-shadow: var(--shadow);
     }
+
     .cta-form h3 {
       margin-top: 0;
       margin-bottom: 6px;
-      font-size: 15px;
-      color: var(--dark);
+      font-size: 16px;
+      color: var(--text);
     }
 
     .form-row {
@@ -889,150 +952,117 @@
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 8px;
     }
+
     @media (max-width: 740px) {
       .form-row {
         grid-template-columns: 1fr;
       }
     }
+
     .form-group {
       display: flex;
       flex-direction: column;
       gap: 3px;
       margin-bottom: 6px;
     }
+
     .form-group label {
       font-size: 11px;
       color: var(--muted);
     }
+
     .form-group input,
     .form-group textarea,
     .form-group select {
       border-radius: 10px;
-      border: 1px solid rgba(22,50,66,0.16);
-      background: #f9fbfd;
+      border: 1px solid rgba(22,50,66,0.22);
+      background: #ffffff;
       color: var(--text);
       padding: 7px 8px;
       font-size: 12px;
       font-family: inherit;
     }
+
     .form-group textarea {
       resize: vertical;
       min-height: 70px;
     }
+
     .form-note {
       font-size: 11px;
       color: var(--muted);
       margin-top: 4px;
     }
 
-    /* BLOG PREVIEW */
-
-    .blog-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
-    }
-    @media (max-width: 960px) {
-      .blog-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-    .blog-card {
-      background: var(--white);
-      border-radius: var(--radius-lg);
-      padding: 12px 14px 10px 14px;
-      box-shadow: 0 10px 22px rgba(0,0,0,0.05);
-      border: 1px solid rgba(22,50,66,0.06);
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-      font-size: 13px;
-      color: var(--muted);
-    }
-    .blog-meta {
-      font-size: 11px;
-      color: var(--muted);
-    }
-    .blog-card h3 {
-      margin: 0;
-      font-size: 15px;
-      color: var(--dark);
-    }
-    .blog-card a.read-link {
-      margin-top: 6px;
-      font-size: 12px;
-      font-weight: 600;
-      text-decoration: none;
-      color: var(--primary);
+    strong.keyword {
+      font-weight: 700;
+      color: var(--text);
     }
 
     /* FOOTER */
 
     footer {
-      background: #e4ebf1;
-      border-top: 1px solid rgba(22,50,66,0.12);
-      margin-top: 10px;
-      padding: 18px 0 24px 0;
+      border-top: 1px solid rgba(22,50,66,0.16);
+      background: #eef2f5;
+      padding: 18px 18px 22px 18px;
       font-size: 11px;
       color: var(--muted);
     }
+
     .footer-inner {
       max-width: 1160px;
       margin: 0 auto;
-      padding: 0 18px;
       display: grid;
-      grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.9fr);
+      grid-template-columns: 2fr 1.2fr 1.2fr;
       gap: 18px;
-      align-items: flex-start;
     }
-    @media (max-width: 900px) {
+
+    @media (max-width: 800px) {
       .footer-inner {
         grid-template-columns: 1fr;
       }
     }
 
-    .footer-nav-title {
-      font-weight: 600;
-      color: var(--dark);
-      margin-bottom: 4px;
+    .footer-col h4 {
+      margin: 0 0 6px 0;
       font-size: 12px;
-    }
-    .footer-nav {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 4px 12px;
-      margin-top: 4px;
-    }
-    .footer-nav a {
-      font-size: 11px;
-      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--text);
     }
 
-    .footer-contact {
-      font-size: 11px;
-      color: var(--muted);
-      margin-top: 6px;
-    }
-    .footer-contact a {
+    .footer-links a {
+      display: inline-block;
+      margin: 2px 0;
       color: var(--primary);
+    }
+
+    .footer-contact-line {
+      margin: 4px 0;
+    }
+
+    .footer-bbb {
+      margin-top: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .footer-bbb img {
+      height: 30px;
+      width: auto;
     }
 
     .footer-bottom {
       max-width: 1160px;
       margin: 10px auto 0 auto;
-      padding: 0 18px;
+      text-align: center;
       font-size: 11px;
       color: var(--muted);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 10px;
-      flex-wrap: wrap;
     }
 
-    strong.keyword {
-      font-weight: 700;
-      color: #1e3340;
+    .footer-bottom strong {
+      color: var(--text);
     }
   </style>
 
@@ -1066,61 +1096,53 @@
     ]
   }
   </script>
+
+  <!-- EmailJS CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
 <body>
 
 <header>
-  <div class="nav-shell">
-    <div class="nav-top">
-      <div class="brand-wrap">
-        <div class="brand-logo"></div>
-        <div class="brand-text">
-          <div class="brand-title">WalkInTubWithShower.com</div>
-          <div class="brand-sub">Aging Safely Baths • Family-Owned Since 2012</div>
-        </div>
+  <div class="nav-inner">
+    <div class="top-bar">
+      <div class="brand-block">
+        <div class="brand-name">WalkInTubWithShower.com</div>
+        <div class="brand-sub">Aging Safely Baths • Family-Owned Since 2012</div>
       </div>
-      <div class="header-contact">
-        <span class="phone-label">Toll Free</span>
-        <a href="tel:1-888-779-2284" class="phone-number">
-          <span class="icon">📞</span>
-          <span>1-888-779-2284</span>
-        </a>
-      </div>
+      <a href="tel:1-888-779-2284" class="header-phone">
+        <span class="icon">📞</span>
+        <span>1-888-779-2284</span>
+      </a>
     </div>
-
-    <div class="nav-bottom">
-      <nav class="nav-links">
-        <a href="#home">Home</a>
-        <a href="#why">Why Tub + Shower</a>
-        <a href="#builder">Design Tool</a>
-        <a href="#who">Who We Help</a>
-        <a href="#faq">FAQ</a>
-        <a href="#states">Service Areas</a>
-        <a href="#blog">Blog & Resources</a>
-        <a href="#contact" class="nav-cta">Free info & pricing</a>
-      </nav>
-      <div class="bbb-badge">
-        <div class="bbb-badge-icon">✓</div>
-        <div class="bbb-badge-text">
-          <span>A+ BBB Rated</span>
-          <span>Accredited business</span>
-        </div>
-      </div>
-    </div>
+    <nav class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#why">Why Tub + Shower</a>
+      <a href="#builder">Design Tool</a>
+      <a href="#who">Who We Help</a>
+      <a href="#faq">FAQ</a>
+      <a href="#states">Service Areas</a>
+      <a href="#contact" class="nav-cta">Free Info & Pricing</a>
+    </nav>
   </div>
 </header>
 
-<div class="hero" id="home">
+<div class="hero-wrap" id="home">
+  <div class="hero-bubbles"></div>
+
   <div class="hero-grid">
     <div>
       <div class="pill-label">
         <span class="pill-dot"></span>
-        Walk in tub with shower • Combo comfort
+        Walk in tub with shower • combo comfort
       </div>
 
       <h1 class="hero-title">
         The <span class="highlight">walk in tub with shower</span> that fits your body, your bathroom and your budget.
       </h1>
+
+      <p class="hero-one-day">
+        One-Day Worry-Free Installation in Many Areas — or DIY Delivery Straight to Your Door.
+      </p>
 
       <p class="hero-text">
         A <strong class="keyword">walk in tub with shower</strong> can give you a deep, relaxing soak on the days you need warmth and hydrotherapy,
@@ -1144,29 +1166,44 @@
         <div class="trust-row">
           <div class="trust-pill">💬 No-pressure conversations</div>
           <div class="trust-pill">🧡 Family-owned, not a call center</div>
-          <div class="trust-pill">🌎 Serving most of the U.S. and parts of Canada</div>
+          <div class="trust-pill">🚚 One-day installation in many areas</div>
+          <div class="trust-pill">📦 DIY delivery available across the U.S. & parts of Canada</div>
         </div>
+      </div>
+
+      <div class="hero-bbb">
+        <img src="bbb-a-plus.webp" alt="Better Business Bureau A+ Rating">
+        <span>Accredited &amp; A+ rated with the Better Business Bureau.</span>
       </div>
     </div>
 
     <aside class="hero-aside">
       <div class="hero-aside-inner">
         <div class="hero-aside-head">
-          <span>Walk in tub + shower combo example</span>
-          <span class="badge">New • Interactive planner below</span>
+          <span>Snapshot of your ideal tub + shower combo</span>
+          <span class="badge">New • Interactive Tool Below</span>
         </div>
-        <div class="hero-img-wrap">
-          <img src="https://cdn.shopify.com/s/files/1/0932/0841/2441/files/large_walk_in_tubs.jpg?v=1754667577" alt="Walk in tub with shower combination for seniors">
+        <div class="hero-aside-main">
+          Choosing a <strong class="keyword">walk in tub with shower</strong> does not have to feel confusing.
+          In just a few minutes you can drag and drop accessories, create a simple plan and send it to our team for feedback.
         </div>
-        <div class="hero-caption">
-          <div>
-            <strong>Deep soaking + shower in one footprint</strong><br>
-            Low step-in, chair-height seat and shower wand designed for daily routines.
+        <div class="hero-aside-stats">
+          <div class="hero-aside-pill">
+            <strong>100+</strong>
+            walk in tub and shower combinations across multiple leading brands.
           </div>
-          <div>
-            <span style="font-size:11px; font-weight:600;">Ships nationwide</span><br>
-            <span style="font-size:11px;">DIY delivery or turnkey installation</span>
+          <div class="hero-aside-pill">
+            <strong>3 paths</strong>
+            One-day turnkey install, DIY delivery, or a blended approach.
           </div>
+          <div class="hero-aside-pill">
+            <strong>1 call</strong>
+            to talk through designs, budgets and installation questions at your own pace.
+          </div>
+        </div>
+        <div class="hero-aside-image">
+          <!-- Installed walk in tub image -->
+          <img src="https://cdn.shopify.com/s/files/1/0932/0841/2441/files/best_walk_in_tub_image.jpg?v=1743199631" alt="Installed walk in tub with shower combination in a bright bathroom">
         </div>
       </div>
     </aside>
@@ -1187,7 +1224,7 @@
     <div class="columns">
       <div>
         <div class="card">
-          <div class="card-tag">Homeowners & aging in place</div>
+          <div class="card-tag">Homeowners &amp; aging in place</div>
           <h3>Bath days and shower days in the same space</h3>
           <p>
             A traditional bathtub often forces a choice: climb over a tall wall for every shower, or give up soaking altogether for a step-in shower.
@@ -1203,6 +1240,9 @@
             <li>Option to shower standing or seated with a handheld or mounted shower wand.</li>
             <li>Space-saving design that fits where most traditional tubs used to sit.</li>
           </ul>
+          <div class="card-image">
+            <img src="https://cdn.shopify.com/s/files/1/0932/0841/2441/files/large_walk_in_tubs.jpg?v=1754667577" alt="Walk in tub with shower combination showing seat and low step entry">
+          </div>
         </div>
 
         <div class="strip">
@@ -1253,48 +1293,6 @@
             During your call, an Aging Safely Baths specialist can walk through these decisions in plain language and match you with a few strong candidates instead of a wall of confusing options.
           </p>
         </div>
-
-        <div class="gallery-item" style="margin-top:14px;">
-          <img src="https://cdn.shopify.com/s/files/1/0932/0841/2441/files/best_walk_in_tub_image.jpg?v=1743199631" alt="Walk in tub with shower combo and hydrotherapy jets">
-          <div class="gallery-caption">
-            <strong>Hydrotherapy walk in tub with shower option</strong><br>
-            Many combos combine a deep soaker, jets and a full-height shower system.
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- GALLERY / DIAGRAM STYLE IMAGES -->
-  <section>
-    <div class="section-header">
-      <h2>See a few walk in tub with shower layouts</h2>
-      <div class="section-tagline">
-        Every bathroom and mobility story is a little different. Here are a few example setups to spark ideas.
-      </div>
-    </div>
-
-    <div class="gallery-grid">
-      <div class="gallery-item">
-        <img src="https://cdn.shopify.com/s/files/1/0932/0841/2441/files/denverwalkintubimage.jpg?v=1741929811" alt="Walk in tub with shower delivered to home">
-        <div class="gallery-caption">
-          <strong>Walk in tub with shower delivery</strong><br>
-          Many units can be shipped directly to your driveway or job site, ready for your contractor or our team to install.
-        </div>
-      </div>
-      <div class="gallery-item">
-        <img src="https://cdn.shopify.com/s/files/1/0932/0841/2441/files/s747262047514780878_p1488_i13_w1400.webp?v=1743640894" alt="Wheelchair accessible bathtub with shower">
-        <div class="gallery-caption">
-          <strong>Wheelchair-friendly layouts</strong><br>
-          Some walk in tub and shower combinations are designed for lateral transfers and mobility devices.
-        </div>
-      </div>
-      <div class="gallery-item">
-        <img src="https://cdn.shopify.com/s/files/1/0932/0841/2441/files/large_walk_in_tubs.jpg?v=1754667577" alt="Multiple walk in tub and shower sizes">
-        <div class="gallery-caption">
-          <strong>Multiple tub and shower footprints</strong><br>
-          Compact, standard and oversized footprints help you match safety and comfort to your bathroom size.
-        </div>
       </div>
     </div>
   </section>
@@ -1330,9 +1328,10 @@
       </div>
 
       <div class="aud-card">
-        <h3>🏥 Contractors & care facilities</h3>
+        <h3>🏥 Contractors &amp; care facilities</h3>
         <p>
-          Builders, remodelers, nursing homes, assisted living communities and hospitals often need durable, easy-to-clean <strong class="keyword">walk in tub shower combination</strong> solutions that support a wide range of residents.
+          Builders, remodelers, nursing homes, assisted living communities and hospitals often need durable, easy-to-clean <strong class="keyword">walk in tub shower combination</strong> solutions that
+          support a wide range of residents.
         </p>
         <p>
           We can help you evaluate models that balance longevity, ease of use and resident comfort, while coordinating with your construction timelines.
@@ -1353,40 +1352,40 @@
       <div>
         <p><strong>Step 1:</strong> Drag accessories into the tub outline below.</p>
         <div class="accessory-list">
-          <div class="accessory" draggable="true" data-name="💧 Hydrotherapy water jets">
+          <div class="accessory" draggable="true" data-name="Hydrotherapy water jets" data-emoji="💧">
             <span class="icon">💧</span> Hydrotherapy water jets
           </div>
-          <div class="accessory" draggable="true" data-name="🫧 Gentle air bubble system">
+          <div class="accessory" draggable="true" data-name="Gentle air bubble system" data-emoji="🫧">
             <span class="icon">🫧</span> Gentle air bubble system
           </div>
-          <div class="accessory" draggable="true" data-name="🔥 Heated backrest">
+          <div class="accessory" draggable="true" data-name="Heated backrest" data-emoji="🔥">
             <span class="icon">🔥</span> Heated backrest
           </div>
-          <div class="accessory" draggable="true" data-name="🧡 Heated seat">
+          <div class="accessory" draggable="true" data-name="Heated seat" data-emoji="🧡">
             <span class="icon">🧡</span> Heated seat
           </div>
-          <div class="accessory" draggable="true" data-name="⏱️ Fast drain system">
+          <div class="accessory" draggable="true" data-name="Fast drain system" data-emoji="⏱️">
             <span class="icon">⏱️</span> Fast drain system
           </div>
-          <div class="accessory" draggable="true" data-name="🚿 Handheld shower wand">
+          <div class="accessory" draggable="true" data-name="Handheld shower wand" data-emoji="🚿">
             <span class="icon">🚿</span> Handheld shower wand
           </div>
-          <div class="accessory" draggable="true" data-name="🌧️ Overhead rain-style shower">
+          <div class="accessory" draggable="true" data-name="Overhead rain-style shower" data-emoji="🌧️">
             <span class="icon">🌧️</span> Overhead rain-style shower
           </div>
-          <div class="accessory" draggable="true" data-name="🦶 Textured floor & step area">
+          <div class="accessory" draggable="true" data-name="Textured floor and step area" data-emoji="🦶">
             <span class="icon">🦶</span> Textured floor &amp; step area
           </div>
-          <div class="accessory" draggable="true" data-name="🧲 Extra grab bars">
+          <div class="accessory" draggable="true" data-name="Extra grab bars" data-emoji="🧲">
             <span class="icon">🧲</span> Extra grab bars
           </div>
-          <div class="accessory" draggable="true" data-name="🌈 Chromotherapy lighting">
+          <div class="accessory" draggable="true" data-name="Chromotherapy lighting" data-emoji="🌈">
             <span class="icon">🌈</span> Chromotherapy lighting
           </div>
-          <div class="accessory" draggable="true" data-name="♨️ In-line heater">
+          <div class="accessory" draggable="true" data-name="In-line heater to help maintain water temperature" data-emoji="♨️">
             <span class="icon">♨️</span> In-line heater
           </div>
-          <div class="accessory" draggable="true" data-name="🫧 Ozone / sanitation system">
+          <div class="accessory" draggable="true" data-name="Ozone or sanitation system" data-emoji="🫧">
             <span class="icon">🫧</span> Ozone / sanitation system
           </div>
         </div>
@@ -1395,15 +1394,13 @@
       <div>
         <p><strong>Step 2:</strong> Drop them into your tub + shower combo.</p>
         <div class="tub-area" id="tub-dropzone">
-          <div class="tub-label-bar">
+          <div class="tub-label">
             <span>Drop accessories here to design your combo.</span>
             <span class="right">🧖‍♀️ Warm soak days • 🚿 Quick shower days</span>
           </div>
           <div class="tub-outline">
-            <div class="tub-door"></div>
-            <div class="tub-seat"></div>
             <div class="tub-shower">🚿</div>
-            <div id="tub-accessory-labels"></div>
+            <div class="tub-labels" id="tub-labels"></div>
           </div>
         </div>
       </div>
@@ -1429,7 +1426,7 @@
     </div>
   </section>
 
-  <!-- BRAND / PROCESS -->
+  <!-- BRAND COMPARISON / TRUST -->
   <section>
     <div class="section-header">
       <h2>How we compare to big national brands in the walk in tub shower space</h2>
@@ -1464,8 +1461,8 @@
 
       <div>
         <div class="card">
-          <div class="card-tag">Questions we can help you ask</div>
-          <h3>Clarity before and after big-brand quotes</h3>
+          <div class="card-tag">Why many people call us before or after getting big-brand quotes</div>
+          <h3>Questions we can help you ask</h3>
           <p>
             Whether you are comparing Aging Safely Baths to a large national brand or just starting research, you deserve clear answers.
           </p>
@@ -1478,21 +1475,12 @@
           <p style="margin-top:8px;">
             Our role is to help you feel informed and supported, whether you move forward with us or not.
           </p>
-          <div style="margin-top:8px;">
-            <span class="bbb-badge">
-              <span class="bbb-badge-icon">✓</span>
-              <span class="bbb-badge-text">
-                <span>A+ BBB Rated</span>
-                <span>Trusted since 2012</span>
-              </span>
-            </span>
-          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- PROCESS STEPS -->
+  <!-- PROCESS -->
   <section>
     <div class="section-header">
       <h2>What the walk in tub with shower process looks like with Aging Safely Baths</h2>
@@ -1515,11 +1503,11 @@
         You receive a written outline that shows model options, estimated pricing and whether DIY delivery or turnkey installation may make more sense.
       </div>
       <div class="mini-pill">
-        <strong>4️⃣ Coordinated installation</strong>
-        If you choose turnkey, our team works with you to schedule demolition, installation, testing and cleanup.
+        <strong>4️⃣ One-day installation in many areas</strong>
+        In many regions, we can coordinate a worry-free one-day installation where our team handles demolition, install, testing and cleanup.
       </div>
       <div class="mini-pill">
-        <strong>5️⃣ Walkthrough & support</strong>
+        <strong>5️⃣ Walkthrough &amp; support</strong>
         We explain how the tub and shower features work, and how to use them in a way that fits your comfort level and doctor recommendations.
       </div>
       <div class="mini-pill">
@@ -1529,7 +1517,7 @@
     </div>
   </section>
 
-  <!-- FAQ -->
+  <!-- FAQ (15+ QUESTIONS, EXPANDABLE) -->
   <section id="faq">
     <div class="section-header">
       <h2>Frequently asked questions about walk in tub and shower combinations</h2>
@@ -1540,108 +1528,241 @@
 
     <div class="faq-grid">
       <div class="faq-item">
-        <h3>Will a walk in tub with shower fit where my current bathtub is?</h3>
-        <p>
-          In many homes, yes. Most <strong class="keyword">walk in tub with shower</strong> systems are designed to fit in a standard alcove where a typical bathtub sits now.
-          However, every bathroom is different. During a consultation, we look at photos, measurements and doorways to see how realistic the fit will be.
-        </p>
+        <div class="faq-question">
+          <span>Will a walk in tub with shower fit where my current bathtub is?</span>
+          <span class="toggle">›</span>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>
+              In many homes, yes. Most <strong class="keyword">walk in tub with shower</strong> systems are designed to fit in a standard alcove where a typical bathtub sits now.
+              However, every bathroom is different. During a consultation, we look at photos, measurements and doorways to see how realistic the fit will be.
+            </p>
+          </div>
+        </div>
       </div>
+
       <div class="faq-item">
-        <h3>Can I still take quick showers without filling the tub?</h3>
-        <p>
-          Yes. One of the main reasons people choose a tub and shower combination is flexibility.
-          You can use the shower alone for a quicker routine, or fill the tub for a full soak when you want warmth and hydrotherapy.
-        </p>
+        <div class="faq-question">
+          <span>Can I still take quick showers without filling the tub?</span>
+          <span class="toggle">›</span>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>
+              Yes. One of the main reasons people choose a tub and shower combination is flexibility.
+              You can use the shower alone for a quicker routine, or fill the tub for a full soak when you want warmth and hydrotherapy.
+            </p>
+          </div>
+        </div>
       </div>
+
       <div class="faq-item">
-        <h3>How long does it take to fill and drain a walk in tub?</h3>
-        <p>
-          Times vary depending on your home’s water pressure, plumbing and water heater size, as well as the specific tub model.
-          During planning, we can talk about general ranges and ways to keep the experience as comfortable as possible.
-        </p>
+        <div class="faq-question">
+          <span>How long does it take to fill and drain a walk in tub?</span>
+          <span class="toggle">›</span>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>
+              Times vary depending on your home’s water pressure, plumbing and water heater size, as well as the specific tub model.
+              During planning, we can talk about general ranges and ways to keep the experience as comfortable as possible.
+            </p>
+          </div>
+        </div>
       </div>
+
       <div class="faq-item">
-        <h3>Do I have to use the jets every time?</h3>
-        <p>
-          No. A <strong class="keyword">walk in tub with shower</strong> that includes hydrotherapy can be used as a simple soaker tub whenever you want.
-          Jets can typically be turned off or set on very gentle settings depending on how you feel that day.
-        </p>
+        <div class="faq-question">
+          <span>Do I have to use the jets every time?</span>
+          <span class="toggle">›</span>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>
+              No. A <strong class="keyword">walk in tub with shower</strong> that includes hydrotherapy can be used as a simple soaker tub whenever you want.
+              Jets can typically be turned off or set on very gentle settings depending on how you feel that day.
+            </p>
+          </div>
+        </div>
       </div>
+
       <div class="faq-item">
-        <h3>Is hydrotherapy okay for my health conditions?</h3>
-        <p>
-          Only your doctor can answer this with confidence. We always encourage you to talk with your healthcare provider about warm water, soaking time and jet intensity.
-          We can provide general product information that you can bring to your appointment.
-        </p>
+        <div class="faq-question">
+          <span>Is hydrotherapy okay for my health conditions?</span>
+          <span class="toggle">›</span>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>
+              Only your doctor can answer this with confidence. We always encourage you to talk with your healthcare provider about warm water, soaking time and jet intensity.
+              We can provide general product information that you can bring to your appointment.
+            </p>
+          </div>
+        </div>
       </div>
+
       <div class="faq-item">
-        <h3>Will Medicare or insurance pay for a walk in tub and shower combination?</h3>
-        <p>
-          Many traditional Medicare plans and insurance carriers do not view walk in tubs as covered medical equipment.
-          However, some Medicare Advantage plans, local programs or veterans’ benefits may offer partial assistance for accessibility upgrades.
-        </p>
+        <div class="faq-question">
+          <span>Will Medicare or insurance pay for a walk in tub and shower combination?</span>
+          <span class="toggle">›</span>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>
+              Many traditional Medicare plans and insurance carriers do not view walk in tubs as covered medical equipment.
+              However, some Medicare Advantage plans, local programs or veterans’ benefits may offer partial assistance for accessibility upgrades.
+            </p>
+          </div>
+        </div>
       </div>
+
       <div class="faq-item">
-        <h3>Can a walk in tub with shower work in a very small bathroom?</h3>
-        <p>
-          Sometimes. There are compact models and front-entry designs that can help in tight spaces.
-          The best first step is to measure your bathroom carefully and talk with us about door swings, clearances and any mobility devices you use.
-        </p>
+        <div class="faq-question">
+          <span>Can a walk in tub with shower work in a very small bathroom?</span>
+          <span class="toggle">›</span>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>
+              Sometimes. There are compact models and front-entry designs that can help in tight spaces.
+              The best first step is to measure your bathroom carefully and talk with us about door swings, clearances and any mobility devices you use.
+            </p>
+          </div>
+        </div>
       </div>
+
       <div class="faq-item">
-        <h3>How do I clean and maintain the tub and shower?</h3>
-        <p>
-          Most modern units are designed with smooth surfaces and accessible components to help with routine cleaning.
-          Some hydrotherapy systems include cleaning cycles or sanitation features. We review maintenance instructions before and after installation.
-        </p>
+        <div class="faq-question">
+          <span>How do I clean and maintain the tub and shower?</span>
+          <span class="toggle">›</span>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>
+              Most modern units are designed with smooth surfaces and accessible components to help with routine cleaning.
+              Some hydrotherapy systems include cleaning cycles or sanitation features. We review maintenance instructions before and after installation.
+            </p>
+          </div>
+        </div>
       </div>
+
       <div class="faq-item">
-        <h3>What if my loved one has memory changes or dementia?</h3>
-        <p>
-          In these cases, simplicity is very important. We can talk about choosing a <strong class="keyword">walk in tub shower combination</strong> with simpler controls, 
-          clear routines and support from caregivers so the experience feels predictable and calm.
-        </p>
+        <div class="faq-question">
+          <span>What if my loved one has memory changes or dementia?</span>
+          <span class="toggle">›</span>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>
+              In these cases, simplicity is very important. We can talk about choosing a <strong class="keyword">walk in tub shower combination</strong> with simpler controls, 
+              clear routines and support from caregivers so the experience feels predictable and calm.
+            </p>
+          </div>
+        </div>
       </div>
+
       <div class="faq-item">
-        <h3>How long does installation usually take?</h3>
-        <p>
-          Many projects can be completed within a few days once materials and schedules are aligned. More complex projects may take longer if plumbing or electrical changes are needed.
-          We set realistic expectations so you are not left wondering what comes next.
-        </p>
+        <div class="faq-question">
+          <span>How long does installation usually take?</span>
+          <span class="toggle">›</span>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>
+              Many projects can be completed within a few days once materials and schedules are aligned. In many areas, we can offer one-day worry-free installation.
+              More complex projects may take longer if plumbing or electrical changes are needed. We set realistic expectations so you are not left wondering what comes next.
+            </p>
+          </div>
+        </div>
       </div>
+
       <div class="faq-item">
-        <h3>Can I use my own contractor?</h3>
-        <p>
-          Yes. Aging Safely Baths can ship a <strong class="keyword">walk in tub with shower</strong> directly to your home or contractor for DIY-style installation,
-          as long as installation follows manufacturer guidelines. We can also coordinate turnkey projects if you prefer a single team handling everything.
-        </p>
+        <div class="faq-question">
+          <span>Can I use my own contractor instead of turnkey installation?</span>
+          <span class="toggle">›</span>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>
+              Yes. Aging Safely Baths can ship a <strong class="keyword">walk in tub with shower</strong> directly to your home or contractor for DIY-style installation,
+              as long as installation follows manufacturer guidelines. For some models, you may even qualify for a limited labor warranty when your own contractor installs the unit properly.
+            </p>
+          </div>
+        </div>
       </div>
+
       <div class="faq-item">
-        <h3>Do walk in tub and shower combinations help property value?</h3>
-        <p>
-          Many buyers appreciate updated bathrooms and aging-in-place features. While no specific value increase can be guaranteed, thoughtful accessibility upgrades often make a home more attractive to a wider range of buyers.
-        </p>
+        <div class="faq-question">
+          <span>Do walk in tub and shower combinations help property value?</span>
+          <span class="toggle">›</span>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>
+              Many buyers appreciate updated bathrooms and aging-in-place features. While no specific value increase can be guaranteed, thoughtful accessibility upgrades often make a home more attractive to a wider range of buyers.
+            </p>
+          </div>
+        </div>
       </div>
+
       <div class="faq-item">
-        <h3>Can we try to reuse existing tile or finishes?</h3>
-        <p>
-          In some projects, part of the surrounding wall finish can stay. In others, replacing the surround makes more sense.
-          We talk through goals for appearance and budget before finalizing any plan.
-        </p>
+        <div class="faq-question">
+          <span>Can we try to reuse existing tile or finishes?</span>
+          <span class="toggle">›</span>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>
+              In some projects, part of the surrounding wall finish can stay. In others, replacing the surround makes more sense.
+              We talk through goals for appearance and budget before finalizing any plan so you know what to expect.
+            </p>
+          </div>
+        </div>
       </div>
+
       <div class="faq-item">
-        <h3>What brands do you carry?</h3>
-        <p>
-          We partner with multiple leading walk in tub manufacturers and carefully select models that have performed well for our customers.
-          Instead of pushing one brand, we match features with real-world needs and budgets.
-        </p>
+        <div class="faq-question">
+          <span>What brands do you carry?</span>
+          <span class="toggle">›</span>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>
+              We partner with multiple leading walk in tub manufacturers and carefully select models that have performed well for our customers.
+              Instead of pushing one brand, we match features with real-world needs and budgets.
+            </p>
+          </div>
+        </div>
       </div>
+
       <div class="faq-item">
-        <h3>How do we get started without feeling rushed?</h3>
-        <p>
-          A simple conversation is often the best first step. You do not have to decide anything on the first call.
-          We ask questions, listen closely and then provide information you can review with your family and doctor.
-        </p>
+        <div class="faq-question">
+          <span>Can you help me compare quotes I already have?</span>
+          <span class="toggle">›</span>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>
+              Yes. Many people call us after receiving a high quote from a national brand. We can review your proposal with you, explain terminology and help you see where there may be room to save or where a different configuration might make more sense.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>How do we get started without feeling rushed?</span>
+          <span class="toggle">›</span>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>
+              A simple conversation is often the best first step. You do not have to decide anything on the first call.
+              We ask questions, listen closely and then provide information you can review with your family and doctor.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -1673,48 +1794,9 @@
         <a href="https://www.agingsafelybaths.com/about/locations/pennsylvania/" target="_blank" rel="noopener">Pennsylvania walk in tubs</a>
       </div>
       <p style="margin-top:8px; font-size:12px;">
-        To explore more locations, visit the full directory on 
-        <a href="https://www.agingsafelybaths.com/about/locations/" target="_blank" rel="noopener">AgingSafelyBaths.com</a> and see if we serve your area.
+        To see if we serve your area, visit the full location directory on 
+        <a href="https://www.agingsafelybaths.com/about/locations/" target="_blank" rel="noopener">AgingSafelyBaths.com</a>.
       </p>
-    </div>
-  </section>
-
-  <!-- BLOG PREVIEW / DASHBOARD -->
-  <section id="blog">
-    <div class="section-header">
-      <h2>Walk in tub with shower blog & resources</h2>
-      <div class="section-tagline">
-        These articles can live on future blog pages and help visitors compare options, understand costs and plan their project.
-      </div>
-    </div>
-
-    <div class="blog-grid">
-      <article class="blog-card">
-        <div class="blog-meta">Planning • 7–9 minute read</div>
-        <h3>Walk In Tub With Shower vs Separate Tub and Shower</h3>
-        <p>
-          A side-by-side look at combined units and separate bath + shower layouts, including safety, space, budget and resale considerations.
-        </p>
-        <a href="blog-walk-in-tub-with-shower-vs-separate.html" class="read-link">Future article placeholder →</a>
-      </article>
-
-      <article class="blog-card">
-        <div class="blog-meta">Comfort • 7–9 minute read</div>
-        <h3>Hydrotherapy Features for Walk In Tub Shower Combinations</h3>
-        <p>
-          Learn how air, water and combination jet systems differ, and how to talk with your doctor about warm water and circulation.
-        </p>
-        <a href="blog-hydrotherapy-walk-in-tub-with-shower.html" class="read-link">Future article placeholder →</a>
-      </article>
-
-      <article class="blog-card">
-        <div class="blog-meta">Practical • 6–8 minute read</div>
-        <h3>What to Measure Before You Buy a Walk In Tub With Shower</h3>
-        <p>
-          Door widths, ceiling height, water heater size and other real-world measurements that keep surprises to a minimum.
-        </p>
-        <a href="blog-measurements-walk-in-tub-with-shower.html" class="read-link">Future article placeholder →</a>
-      </article>
     </div>
   </section>
 
@@ -1730,7 +1812,7 @@
         <ul class="card-list">
           <li>Understand which features may matter most for your body, your bathroom and your caregiving situation.</li>
           <li>Compare a few <strong class="keyword">best walk in tub shower combination</strong> setups without getting overwhelmed.</li>
-          <li>Review budget ranges for DIY delivery and full installation paths.</li>
+          <li>Review budget ranges for one-day worry-free installation and DIY delivery paths.</li>
         </ul>
         <p style="margin-top:8px; font-size:13px;">
           You can also bring our information to your doctor to ask how hydrotherapy and deeper soaking might fit into your overall wellness plan.
@@ -1785,7 +1867,7 @@
               <label for="wits-path">Preferred path</label>
               <select id="wits-path" name="path">
                 <option value="">Not sure yet</option>
-                <option value="turnkey">Turnkey installation</option>
+                <option value="turnkey">Turnkey one-day installation (where available)</option>
                 <option value="diy">DIY delivery (I have a contractor)</option>
                 <option value="compare">I want to compare both</option>
               </select>
@@ -1795,7 +1877,10 @@
             <label for="wits-message">Tell us a little about your goals</label>
             <textarea id="wits-message" name="message" placeholder="Example: 79-year-old parent, prefers baths, small hall bathroom, wants both a tub and a shower."></textarea>
           </div>
+
+          <!-- Hidden fields for tracking -->
           <input type="hidden" name="source_site" value="walkintubwithshower.com">
+          <input type="hidden" id="selected-features-input" name="selected_features" value="">
 
           <button type="submit" class="btn-primary" style="width:100%; justify-content:center; margin-top:4px;">
             Send my information to Aging Safely Baths
@@ -1813,126 +1898,139 @@
 
 <footer>
   <div class="footer-inner">
-    <div>
-      <div class="footer-nav-title">Quick links</div>
-      <div class="footer-nav">
-        <a href="#home">Home</a>
-        <a href="#why">Why tub + shower</a>
-        <a href="#builder">Design tool</a>
-        <a href="#who">Who we help</a>
-        <a href="#faq">FAQ</a>
-        <a href="#states">Service areas</a>
-        <a href="#blog">Blog & resources</a>
-        <a href="https://www.agingsafelybaths.com/walk-in-tubs/" target="_blank" rel="noopener">AgingSafelyBaths.com – Walk in tubs</a>
+    <div class="footer-col">
+      <h4>About WalkInTubWithShower.com</h4>
+      <p>
+        WalkInTubWithShower.com is operated by Aging Safely Baths, a family-owned company focused on walk in tubs, walk in tub with shower combinations and accessible showers since 2012.
+      </p>
+      <div class="footer-contact-line">
+        <strong>Call Toll Free:</strong>
+        <a href="tel:1-888-779-2284">1-888-779-2284</a>
       </div>
-
-      <div class="footer-contact">
-        <p style="margin:8px 0 2px 0;">
-          <strong>Need to talk to someone?</strong><br>
-          Toll Free: <a href="tel:1-888-779-2284">1-888-779-2284</a><br>
-          Email: <a href="mailto:sales@agingsafelybaths.com">sales@agingsafelybaths.com</a>
-        </p>
-        <p style="margin:4px 0 0 0;">
-          Aging Safely Baths helps seniors, caregivers and facilities compare walk in tubs, <strong>walk in tub with shower</strong> combinations and accessible showers across much of the U.S. and parts of Canada.
-        </p>
+      <div class="footer-contact-line">
+        <strong>Email:</strong>
+        <a href="mailto:sales@agingsafelybaths.com">sales@agingsafelybaths.com</a>
+      </div>
+      <div class="footer-bbb">
+        <img src="bbb-a-plus.webp" alt="Better Business Bureau A+ Rating">
+        <span>BBB Accredited • A+ Rating</span>
       </div>
     </div>
 
-    <div>
-      <div class="footer-nav-title">Trust & accessibility</div>
-      <p style="margin:4px 0 6px 0;">
-        WalkInTubWithShower.com is operated by Aging Safely Baths, a family-owned company focused on safe, comfortable bathing.
-      </p>
-      <p style="margin:4px 0 8px 0;">
-        <span class="bbb-badge">
-          <span class="bbb-badge-icon">✓</span>
-          <span class="bbb-badge-text">
-            <span>A+ BBB Rated</span>
-            <span>Accredited business</span>
-          </span>
-        </span>
-      </p>
-      <p style="margin:0;">
-        Explore related solutions:<br>
-        <a href="https://www.agingsafelybaths.com/handicap-showers/" target="_blank" rel="noopener">Handicap & roll in showers</a><br>
-        <a href="https://www.agingsafelybaths.com/therapeutic-benefits/" target="_blank" rel="noopener">Hydrotherapy & therapeutic benefits</a>
-      </p>
+    <div class="footer-col">
+      <h4>Helpful links</h4>
+      <div class="footer-links">
+        <a href="#why">Why a tub + shower combo?</a><br>
+        <a href="#builder">Walk in tub with shower builder tool</a><br>
+        <a href="#faq">Frequently asked questions</a><br>
+        <a href="#states">Check service areas</a><br>
+        <a href="https://walkintubs4less.com/pages/walk-in-tub-planner" target="_blank" rel="noopener">Walk-In Tub Planner</a><br>
+        <a href="https://www.agingsafelybaths.com/walk-in-tubs/" target="_blank" rel="noopener">AgingSafelyBaths.com – Walk In Tubs</a><br>
+        <a href="https://www.agingsafelybaths.com/handicap-showers/" target="_blank" rel="noopener">Handicap &amp; Roll In Showers</a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Resources &amp; locations</h4>
+      <div class="footer-links">
+        <a href="https://www.agingsafelybaths.com/about/locations/" target="_blank" rel="noopener">See if we serve your area</a><br>
+        <a href="https://www.agingsafelybaths.com/faqs/" target="_blank" rel="noopener">Walk in tub FAQs</a><br>
+        <a href="https://www.agingsafelybaths.com/therapeutic-benefits/" target="_blank" rel="noopener">Hydrotherapy benefits</a><br>
+        <a href="https://www.agingsafelybaths.com/safety/" target="_blank" rel="noopener">Bathroom safety tips</a><br>
+        <a href="#contact">Request information &amp; pricing</a>
+      </div>
     </div>
   </div>
 
   <div class="footer-bottom">
-    <span>© <span id="year"></span> Aging Safely Baths. All rights reserved.</span>
-    <span>Always consult your doctor before beginning any new hydrotherapy or warm-water routine.</span>
+    <strong>© 2025–2026 WalkInTubWithShower.com &amp; Aging Safely Baths.</strong> All rights reserved. Product availability, installation options and warranties may vary by region.
   </div>
 </footer>
 
-<!-- EmailJS & Builder Scripts -->
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 <script>
-  // === Current year in footer ===
-  document.getElementById('year').textContent = new Date().getFullYear();
+  // Initialize EmailJS
+  (function() {
+    if (window.emailjs) {
+      emailjs.init("alWutsHLG6c3h9P2j");
+    }
+  })();
 
   // === Drag and drop builder ===
   const accessories = document.querySelectorAll('.accessory');
   const dropzone = document.getElementById('tub-dropzone');
   const selectedList = document.getElementById('selected-accessories');
   const planText = document.getElementById('plan-text');
-  const labelsContainer = document.getElementById('tub-accessory-labels');
-
+  const tubLabels = document.getElementById('tub-labels');
   const selectedSet = new Set();
 
   accessories.forEach(acc => {
     acc.addEventListener('dragstart', e => {
       e.dataTransfer.setData('text/plain', acc.getAttribute('data-name'));
+      e.dataTransfer.setData('text/emoji', acc.getAttribute('data-emoji') || '');
     });
   });
 
   dropzone.addEventListener('dragover', e => {
     e.preventDefault();
-    dropzone.style.borderColor = 'rgba(26,109,150,0.8)';
+    dropzone.style.borderColor = 'rgba(255,149,100,0.8)';
   });
 
   dropzone.addEventListener('dragleave', () => {
-    dropzone.style.borderColor = 'rgba(26,109,150,0.3)';
+    dropzone.style.borderColor = 'rgba(26,109,150,0.35)';
   });
 
   dropzone.addEventListener('drop', e => {
     e.preventDefault();
-    dropzone.style.borderColor = 'rgba(26,109,150,0.3)';
+    dropzone.style.borderColor = 'rgba(26,109,150,0.35)';
     const name = e.dataTransfer.getData('text/plain');
+    const emoji = e.dataTransfer.getData('text/emoji') || '';
     if (name && !selectedSet.has(name)) {
-      selectedSet.add(name);
+      selectedSet.add(name + '|' + emoji);
       renderSelected();
-      renderLabels();
     }
   });
 
   function renderSelected() {
     selectedList.innerHTML = '';
-    Array.from(selectedSet).forEach(item => {
-      const li = document.createElement('li');
-      li.textContent = item;
-      selectedList.appendChild(li);
-    });
-    updatePlanText();
-  }
+    tubLabels.innerHTML = '';
+    const items = Array.from(selectedSet);
 
-  function renderLabels() {
-    labelsContainer.innerHTML = '';
-    Array.from(selectedSet).forEach(item => {
+    items.forEach(item => {
+      const [name, emoji] = item.split('|');
+      const li = document.createElement('li');
+      li.textContent = (emoji ? emoji + ' ' : '') + name;
+      selectedList.appendChild(li);
+
       const chip = document.createElement('span');
       chip.className = 'tub-label-chip';
-      chip.textContent = item; // includes emoji + text, black text only via CSS
-      labelsContainer.appendChild(chip);
+      if (emoji) {
+        const emSpan = document.createElement('span');
+        emSpan.textContent = emoji;
+        chip.appendChild(emSpan);
+      }
+      const textSpan = document.createElement('span');
+      textSpan.textContent = name;
+      chip.appendChild(textSpan);
+      tubLabels.appendChild(chip);
     });
+
+    updatePlanText();
+    updateHiddenSelectedFeatures();
   }
 
   function updatePlanText() {
     const items = Array.from(selectedSet);
     const header = 'WalkInTubWithShower.com – Custom Walk In Tub With Shower Plan\n\n';
+    const listText = items.length
+      ? items.map(i => {
+          const [name, emoji] = i.split('|');
+          return '- ' + (emoji ? emoji + ' ' : '') + name;
+        }).join('\n')
+      : '(No accessories selected yet.)';
+
     const intro =
 `Selected accessories:
-${items.length ? items.map(i => '- ' + i).join('\n') : '(No accessories selected yet.)'}
+${listText}
 
 Notes:
 • This plan is for discussion purposes only.
@@ -1941,10 +2039,19 @@ Notes:
     planText.value = header + intro;
   }
 
+  function updateHiddenSelectedFeatures() {
+    const hidden = document.getElementById('selected-features-input');
+    if (!hidden) return;
+    const items = Array.from(selectedSet);
+    hidden.value = items.map(i => {
+      const [name, emoji] = i.split('|');
+      return (emoji ? emoji + ' ' : '') + name;
+    }).join(', ');
+  }
+
   document.getElementById('clear-plan-btn').addEventListener('click', () => {
     selectedSet.clear();
     renderSelected();
-    renderLabels();
   });
 
   document.getElementById('email-plan-btn').addEventListener('click', () => {
@@ -1965,24 +2072,39 @@ Notes:
     URL.revokeObjectURL(url);
   });
 
-  // === EmailJS form wiring (live) ===
-  (function(){
-    // Aging Safely Baths EmailJS public key
-    emailjs.init("alWutsHLG6c3h9P2j");
-  })();
+  // Initialize plan text and hidden field on load
+  updatePlanText();
+  updateHiddenSelectedFeatures();
 
-  document.getElementById('wits-contact-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const form = this;
+  // === Contact form wired to EmailJS ===
+  const contactForm = document.getElementById('wits-contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
 
-    emailjs.sendForm('service_usimtub', 'template_5n0cskt', form)
-      .then(function() {
-        alert('Thank you! Your message has been sent. An Aging Safely Baths representative will follow up shortly.');
-        form.reset();
-      }, function(error) {
-        console.error('EmailJS error:', error);
-        alert('There was an issue sending your request. Please call 1-888-779-2284 or try again.');
-      });
+      if (!window.emailjs) {
+        alert('Thank you! Your request was captured. If this form is not sending, please call 1-888-779-2284 while we finalize the form connection.');
+        return;
+      }
+
+      emailjs.sendForm('service_usimtub', 'template_5n0cskt', this)
+        .then(function() {
+          alert('Thank you! Your message has been sent to Aging Safely Baths.');
+          contactForm.reset();
+          updateHiddenSelectedFeatures();
+        }, function(error) {
+          console.error('EmailJS error:', error);
+          alert('There was an issue sending your request. Please call 1-888-779-2284.');
+        });
+    });
+  }
+
+  // === FAQ accordion ===
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const question = item.querySelector('.faq-question');
+    question.addEventListener('click', () => {
+      item.classList.toggle('open');
+    });
   });
 </script>
 
