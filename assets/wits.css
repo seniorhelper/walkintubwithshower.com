@@ -159,7 +159,7 @@ figcaption{font-size:1rem;color:var(--muted);margin-top:.4rem}
 .sf a:hover{color:#7dd3fc}
 .sf-links a{display:block;padding:.3rem 0;font-size:1rem;text-decoration:none}
 .sf-brand{display:flex;flex-wrap:wrap;align-items:center;gap:18px 26px;margin-bottom:1rem}
-.sf-brand .sf-logo{width:260px;max-width:100%}
+.sf-brand .sf-logo{width:280px;max-width:100%}
 .sf-bbb{display:inline-flex;flex-direction:column;align-items:center;gap:6px;background:#fff;border-radius:12px;padding:12px 12px 9px}
 .sf-bbb .bbb-seal{width:200px}
 .sf-bbb b{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#123a5c}
